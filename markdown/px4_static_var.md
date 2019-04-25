@@ -1,0 +1,134 @@
+# 编译px4stm32f4discovery的单板
+```
+$ make px4-stm32f4discovery_default
+```
+
+# 统计静态变量的大小
+我们通过统计静态变量的大小分析，静态内存的分配是多少
+```
+yangang@ubuntu:~/work/github_proj/Firmware$ arm-none-eabi-nm --size-sort --print-size --radix=dec ./build/nuttx_px4-stm32f4discovery_default/nuttx_px4-stm32f4discovery_default.elf |grep " [bBdD] "
+536880584 00000001 b autosave_disabled
+536880492 00000001 b autosave_scheduled
+536879372 00000001 b g_binitialized
+536876464 00000001 B g_os_initstate
+536879436 00000001 b g_procfs_entrycount
+536875764 00000001 B g_rtc_enabled
+536871936 00000001 D g_syslog_mask
+536878944 00000001 b initialized.6060
+536880728 00000001 b once.5953
+536879540 00000001 b _ZL13shutdown_args
+536879508 00000001 b _ZL21shutdown_lock_counter
+536874812 00000002 b g_bkp_writable_counter
+536876452 00000002 B g_lastpid
+536879288 00000002 b g_retchar
+536879290 00000002 b g_retchar
+536878932 00000002 B g_wdnfree
+536879646 00000002 b latency_actual
+536879644 00000002 b latency_baseline
+536879510 00000002 b _ZL16shutdown_counter
+536879284 00000004 B g_binfmts
+536878960 00000004 b g_cdcacm
+536875760 00000004 B g_current_regs
+536879428 00000004 b g_devno
+536876152 00000004 b g_irqerrno
+536879368 00000004 b g_optptr
+536879432 00000004 b g_procfs_entries
+536875792 00000004 B g_root_inode
+536871940 00000004 D g_syslog_channel
+536877720 00000004 B g_system_timer
+536879548 00000004 B idle_wastecounter
+536879640 00000004 b last_count.7127
+536879376 00000004 B optarg
+536871960 00000004 D optind
+536871956 00000004 D optopt
+536879544 00000004 b orb_log_message_pub
+536879300 00000004 b p5s
+536880556 00000004 B param_changed_storage
+536880548 00000004 b param_export_perf
+536880464 00000004 b param_find_perf
+536880496 00000004 b param_get_perf
+536880488 00000004 b param_instance
+536880500 00000004 b param_set_perf
+536880504 00000004 b param_topic
+536880552 00000004 b param_user_file
+536880520 00000004 B param_values
+536880580 00000004 b reader_lock_holders
+536879296 00000004 b result.6270
+536879292 00000004 b result_k.6271
+536880544 00000004 B size_param_changed_storage_bytes
+536879512 00000004 b _ZL14shutdown_hooks
+536879500 00000004 b _ZL5g_dev
+536879504 00000004 B _ZN4uORB7Manager9_InstanceE
+536879632 00000008 b base_time.7126
+536879584 00000008 b callout_queue
+536877712 00000008 B g_basetime
+536876164 00000008 B g_delayed_kufree
+536879448 00000008 b g_desalloc
+536879440 00000008 B g_desfree
+536876468 00000008 b g_idleargv
+536876484 00000008 B g_inactivetasks
+536879456 00000008 B g_msgfree
+536879464 00000008 B g_msgfreeirq
+536876156 00000008 B g_pendingtasks
+536876456 00000008 B g_readytorun
+536877680 00000008 B g_sigfreeaction
+536877688 00000008 B g_sigpendingaction
+536877672 00000008 B g_sigpendingirqaction
+536877704 00000008 B g_sigpendingirqsignal
+536877696 00000008 B g_sigpendingsignal
+536876172 00000008 B g_waitingformqnotempty
+536876180 00000008 B g_waitingformqnotfull
+536876188 00000008 B g_waitingforsemaphore
+536876476 00000008 B g_waitingforsignal
+536878936 00000008 B g_wdactivelist
+536877724 00000008 B g_wdfreelist
+536880512 00000008 b last_autosave_timestamp
+536880732 00000008 b perf_counters
+536871944 00000012 d g_builtin_binfmt
+536878948 00000012 b g_cu
+536876856 00000016 B g_hpwork
+536876872 00000016 B g_lpwork
+536871964 00000020 d g_devno_sem
+536872184 00000020 d g_sem
+536872116 00000020 D g_spawn_parmsem
+536880524 00000020 b param_sem
+536880468 00000020 b param_sem_save
+536872164 00000020 D __px4_log_level_str
+536880560 00000020 b reader_lock_holders_lock
+536880440 00000024 b autosave_work
+536875768 00000024 b g_inode_sem
+536879516 00000024 b _ZL13shutdown_work
+536879472 00000028 B g_spawn_parms
+536872204 00000028 D perf_counters_mutex
+536872136 00000028 d _ZL14shutdown_mutex
+536874148 00000032 b g_usart2rxfifo
+536874180 00000032 b g_usart6rxfifo
+536879552 00000032 b serial_dma_call.7550
+536879592 00000036 B latency_counters
+536879380 00000048 b g_syslog_dev
+536879304 00000064 b freelist
+536871984 00000129 d g_bootcodeblob
+536880588 00000140 b g_bbsram
+536871136 00000224 d g_usart2priv
+536870912 00000224 d g_usart6priv
+536876196 00000256 B g_pidhash
+536872448 00000300 b g_usart6rxbuffer
+536872748 00000300 b g_usart6txbuffer
+536878964 00000320 b g_otgfsdev
+536875796 00000356 B g_mmheap
+536876492 00000364 b g_idletcb
+536871360 00000576 d g_dma
+536874212 00000600 b g_usart2rxbuffer
+536875008 00000752 B g_intstackalloc
+536876888 00000784 B g_irqvector
+536879648 00000792 B system_load
+536873048 00001100 b g_usart2txbuffer
+536877732 00001200 b g_wdpool
+```
+
+# 分析动态内存
+
+通过free命令
+```
+$ free
+```
