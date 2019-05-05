@@ -1,6 +1,11 @@
 
 qgroundcontrol开发者文档中说明了qgc中的各个链路流向在文档中说明的很清楚，下面配套源代码进行讲解整个qgc地面站的数据流向过程.
 
+<div align="center">
+<p>  </p> 
+<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qgc_0504.png" height="720" width="1280" > 
+</div>
+
 # qgroundcontrol通信
 在 https://dev.qgroundcontrol.com/en/communication_flow.html 中描述如下
 ```
@@ -89,8 +94,19 @@ void UDPLink::run()
         exec();
     }
 ```
+4. UDP信号多线程执行
+测试LinkInterface::bytesReceived信号的发生，MAVLinkProtocol::receiveBytes的slot执行线程
+```
+main: 0x7efe09670800
+Adding target QHostAddress("127.0.0.1") 14556
+UDPLink: 0x7efdb246e700
+UDPLink: 0x7efdb246e700
+MAVLinkProtocol: 0x7efe09670800
+Switching outbound to mavlink 2.0 due to incoming mavlink 2.0 packet: 0x55a77c48ca48 1 2
+MAVLinkProtocol: 0x7efe09670800
+```
 ## SerialLink工作原理
-串口link的数据收发都是使用signal和slot进行处理的
+1. 串口link的数据收发都是使用signal和slot进行处理的
 ```
 bool SerialLink::_connect(void)
 if (!_hardwareConnect(error, errorString)) {
@@ -102,6 +118,18 @@ if (!_hardwareConnect(error, errorString)) {
 void SerialLink::_writeBytes(const QByteArray data)
   ->  _port->write(data);
 ```
+
+2. 测试LinkInterface::bytesReceived信号的发生，MAVLinkProtocol::receiveBytes的slot执行线程
+```
+main:id 0x7fb3aca56800
+"v3.5.2"
+QGCMessageBox (unit testing) "New Version Available" "There is a newer version of QGroundControl available. You can download it from qgroundcontrol.com."
+MAVLINK:id 0x7fb3aca56800
+Switching outbound to mavlink 2.0 due to incoming mavlink 2.0 packet: 0x564613ce9a70 2 2
+serialLINK:id 0x7fb3aca56800
+MAVLINK:id 0x7fb3aca56800
+```
+
 ## mavlink解析
 字节的收发和MAVLinkProtocol的槽函数进行连接，
 void LinkManager::_addLink(LinkInterface* link)
