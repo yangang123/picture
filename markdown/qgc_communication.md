@@ -1,3 +1,4 @@
+
 qgroundcontrol开发者文档中说明了qgc中的各个链路流向在文档中说明的很清楚，下面配套源代码进行讲解整个qgc地面站的数据流向过程.
 
 # qgroundcontrol通信
@@ -19,8 +20,6 @@ Description of the high level communication flow which takes place during a vehi
 ```
 
 # qgroundcontrol实现
-
-## 线程
 
 ### qgroundcontrol进程中线程
 
