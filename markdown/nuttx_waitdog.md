@@ -72,4 +72,48 @@ WDOG_ID wd_create (void)
     ->  wdog = (FAR struct wdog_s *)kmm_malloc(sizeof(struct wdog_s));
 
 
-    
+# waitdog中用到的全局变量
+> 全局变量主要有下面3个
+```c
+//单链表进行空闲链表
+sq_queue_t g_wdfreelist;
+
+//激活waitdog的单链表
+sq_queue_t g_wdactivelist;
+
+//空闲链表的数量
+uint16_t g_wdnfree; 
+```
+
+> 删除激活的waitdog, 由于激活链表是一个单链表，所有在删除节点的时候，要找到当前节点的前驱
+```c
+//删除节点
+int wd_cancel(WDOG_ID wdog)
+        
+        //找到当前节点的头节点
+        prev = NULL;
+        curr = (FAR struct wdog_s *)g_wdactivelist.head;
+        while ((curr) && (curr != wdog))
+        {
+          prev = curr;
+          curr = curr->next;
+        }
+       
+        if (prev)
+          //链表中间位置的节点,通过上一个节点删除
+          ->  (void)sq_remafter((FAR sq_entry_t *)prev, &g_wdactivelist);
+        else 
+          //删除尾节点
+          -> (void)sq_remfirst(&g_wdactivelist);
+
+int wd_delete(WDOG_ID wdog)
+  ->  if (WDOG_ISACTIVE(wdog))
+    ->  wd_cancel(wdog);  //激活waitdog就取消激活
+   if (WDOG_ISALLOCED(wdog))
+     ->  sched_kfree(wdog); //释放内存
+    else if (!WDOG_ISSTATIC(wdog))
+      -> sq_addlast((FAR sq_entry_t *)wdog, &g_wdfreelist); //静态分配，回收内存到空闲链表中
+      -> g_wdnfree++;
+``` 
+
+
