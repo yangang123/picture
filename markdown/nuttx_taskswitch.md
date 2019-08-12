@@ -1,4 +1,4 @@
-@
+@[TOC]
 
 # 任务pidhash
 
@@ -23,6 +23,58 @@ static void sched_releasepid(pid_t pid)
     g_pidhash[hash_ndx].tcb   = NULL;
     g_pidhash[hash_ndx].pid   = INVALID_PROCESS_ID;
 ```
+
+## pid 
+nsh> ps
+  PID PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK  COMMAND
+    0   0 FIFO     Kthread N-- Ready              00000000 Idle Task
+    1 249 FIFO     Kthread --- Waiting  Signal    00000000 hpwork
+    2  50 FIFO     Kthread --- Waiting  Signal    00000000 lpwork
+    3 100 FIFO     Task    --- Running            00000000 init
+  133 100 FIFO     Task    --- Waiting  Signal    00000000 mavlink_if2 mavlink start -r 800000 -d /dev/ttyACM0 -m config -x
+  135 105 FIFO     Task    --- Waiting  Semaphore 00000000 navigator start
+   40 220 FIFO     Task    --- Waiting  Semaphore 00000000 gps start
+  105 100 FIFO     Task    --- Waiting  Signal    00000000 mavlink_if1 mavlink start -d /dev/ttyS2 -b 57600 -m osd -r 1000
+  106 175 FIFO     pthread --- Waiting  Semaphore 00000000 mavlink_rcv_if1 0x2002dc40
+   76 249 FIFO     Task    --- Waiting  Semaphore 00000000 sensors start
+  141 250 FIFO     Task    --- Waiting  Semaphore 00000000 ekf2 start
+   78 140 FIFO     Task    --- Waiting  Signal    00000000 commander start
+   79  50 FIFO     pthread --- Waiting  Semaphore 00000000 commander_low_prio 0x0
+   90 100 FIFO     Task    --- Waiting  Signal    00000000 mavlink_if0 mavlink start -r 1200 -f
+   91 175 FIFO     pthread --- Waiting  Semaphore 00000000 mavlink_rcv_if0 0x2002e410
+  158 245 FIFO     Task    --- Waiting  Semaphore 00000000 logger start -b 14 -t
+  159  60 FIFO     pthread --- Waiting  Semaphore 00000000 log_writer_file 0x2002ea90
+
+## pid转hash表
+···c
+#include <stdio.h>
+int pid[32] = {0,1,2,3,133,135,40,105,106,76,141,78,79,90,91,158,159};
+#define CONFIG_MAX_TASKS 32
+int main()
+{	
+	for (int i = 0; i < 32; i++) 
+		printf("pid:%d\n", pid[i] % CONFIG_MAX_TASKS);
+	return 0;
+}
+pid:0
+pid:1
+pid:2
+pid:3
+pid:5
+pid:7
+pid:8
+pid:9
+pid:10
+pid:12
+pid:13
+pid:14
+pid:15
+pid:26
+pid:27
+pid:30
+pid:31
+
+``
 
 # 任务状态
 > nuttx每个任务状态都是1个队列
@@ -131,3 +183,4 @@ Backtrace stopped: previous frame identical to this frame (corrupt stack?)
 ```
 
 
+markdown/nuttx_taskswitch.md
