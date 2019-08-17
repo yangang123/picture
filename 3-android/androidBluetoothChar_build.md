@@ -1,41 +1,41 @@
-# ½éÉÜ
->androidBluetoothCharÊÇgoogleÎªandroidÌá¹©µÄBluetoothµÄdemo¡£ËüµÄ¹¦ÄÜÊÇ2Ì¨ÊÖ»úÍ¨¹ýÀ¶ÑÀÁ¬½Ó£¬
->ÔÚappÖÐÊäÈëÄã·¢ËÍ¸ø¶Ô·½µÄÏûÏ¢£¬È»ºóÔÙÁíÒ»Ì¨ÊÖ»úÉÏÏÔÊ¾·¢¹ýÀ´µÄÏûÏ¢£¬¿ÉÒÔÊäÈë×Ö·û£¬½øÐÐ»Ø¸´¸ø·¢ËÍ
->¶Ô·½
+# ä»‹ç»
+>androidBluetoothCharæ˜¯googleä¸ºandroidæä¾›çš„Bluetoothçš„demoã€‚å®ƒçš„åŠŸèƒ½æ˜¯2å°æ‰‹æœºé€šè¿‡è“ç‰™è¿žæŽ¥ï¼Œ
+>åœ¨appä¸­è¾“å…¥ä½ å‘é€ç»™å¯¹æ–¹çš„æ¶ˆæ¯ï¼Œç„¶åŽå†å¦ä¸€å°æ‰‹æœºä¸Šæ˜¾ç¤ºå‘è¿‡æ¥çš„æ¶ˆæ¯ï¼Œå¯ä»¥è¾“å…¥å­—ç¬¦ï¼Œè¿›è¡Œå›žå¤ç»™å‘é€
+>å¯¹æ–¹
 
-# ¹¹½¨¹ý³Ì
+# æž„å»ºè¿‡ç¨‹
 
-## ¹¹½¨»·¾³
+## æž„å»ºçŽ¯å¢ƒ
 - android studio 3.4.1
 - url: https://github.com/googlesamples/android-BluetoothChat.git
 
-## ÉèÖÃAPI°æ±¾
->ÓÒ»÷android-BlutoothChar,µã»÷"open module setting", ½øÐÐÉèÖÃSDKÎª"android API28"
+## è®¾ç½®APIç‰ˆæœ¬
+>å³å‡»android-BlutoothChar,ç‚¹å‡»"open module setting", è¿›è¡Œè®¾ç½®SDKä¸º"android API28"
 
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/AndroidBluetooth/bluetooth_change_API_platform.jpg" height="720" width="1536" > 
 </div>
 
 
-## °²×°¹¹½¨¹¤¾ß
-> Í¨¹ý±àÒëÐÅÏ¢ÌáÊ¾°²×°build tools 27.0.2µÄ¹¤¾ß
+## å®‰è£…æž„å»ºå·¥å…·
+> é€šè¿‡ç¼–è¯‘ä¿¡æ¯æç¤ºå®‰è£…build tools 27.0.2çš„å·¥å…·
 
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/AndroidBluetooth/bluetooth_instatll_build_tools.jpg" height="720" width="1536" > 
 </div>
 
-## ÐÞ¸ÄSDK×îÐ¡°æ±¾
-> SDK×îÐ¡°æ±¾ÎªAPI28
+## ä¿®æ”¹SDKæœ€å°ç‰ˆæœ¬
+> SDKæœ€å°ç‰ˆæœ¬ä¸ºAPI28
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/AndroidBluetooth/bluetooth_change_min_SDK_version.jpg" height="720" width="1536" > 
 </div>
 
-## ±àÒëÍê³É
-> ±àÒëÍê³É£¬ÂÌÉ«µÄÔËÐÐ°´Å¥»á³£ÁÁ
+## ç¼–è¯‘å®Œæˆ
+> ç¼–è¯‘å®Œæˆï¼Œç»¿è‰²çš„è¿è¡ŒæŒ‰é’®ä¼šå¸¸äº®
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/AndroidBluetooth/bluetooth_build_finish.jpg" height="720" width="1536" > 
 </div>

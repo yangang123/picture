@@ -1,10 +1,10 @@
 
-# linkmanage²¿·Ö£¬¶Ô²»Í¬Á´Â·µÄ¹ÜÀí
+# linkmanageéƒ¨åˆ†ï¼Œå¯¹ä¸åŒé“¾è·¯çš„ç®¡ç†
 v2.6.0
-Ä¿Ç°Ö§³ÖµÄUDP,TCP,serial 
+ç›®å‰æ”¯æŒçš„UDP,TCP,serial 
 
-1. ´´½¨µ¥ÊµÀılinkmanager
-> ´´½¨µ¥ÊµÀıÊÇ1¸öºê¶¨Òå,Õâ¸öÉè¼Æ»¹ÊÇºÜÇÉÃîµÄ£¬Òş²ØÁËÊµÀıµÄ´´½¨
+1. åˆ›å»ºå•å®ä¾‹linkmanager
+> åˆ›å»ºå•å®ä¾‹æ˜¯1ä¸ªå®å®šä¹‰,è¿™ä¸ªè®¾è®¡è¿˜æ˜¯å¾ˆå·§å¦™çš„ï¼Œéšè—äº†å®ä¾‹çš„åˆ›å»º
 ```cpp
 IMPLEMENT_QGC_SINGLETON(LinkManager, LinkManager)
 
@@ -22,23 +22,23 @@ IMPLEMENT_QGC_SINGLETON(LinkManager, LinkManager)
     \
 
 ``` 
-##  ·¢ËÍÊı¾İ
+##  å‘é€æ•°æ®
 
-1. ·¢ËÍĞÄÌø°ü
+1. å‘é€å¿ƒè·³åŒ…
 ```cpp
 void MAVLinkProtocol::sendHeartbeat()
 ```
-2. ·¢ËÍÏûÏ¢
+2. å‘é€æ¶ˆæ¯
 ```cpp
 sendMessage(beat);
 ```
 
-3. ·¢ËÍÁ´Â·
+3. å‘é€é“¾è·¯
 ```cpp
  link->writeBytes((const char*)buffer, len);
 ```
 
-4. ·¢ËÍÁ´Â·µÄIOĞ´º¯Êı
+4. å‘é€é“¾è·¯çš„IOå†™å‡½æ•°
 ```cpp
 void SerialLink::writeBytes(const char* data, qint64 size)
 {
@@ -52,22 +52,22 @@ void SerialLink::writeBytes(const char* data, qint64 size)
 }
 ```
 
-##  ½ÓÊÕÊı¾İ
+##  æ¥æ”¶æ•°æ®
 
-1. ÏÈÕÒµ½½âÎömavlink°üµÄÎ»ÖÃ
+1. å…ˆæ‰¾åˆ°è§£æmavlinkåŒ…çš„ä½ç½®
 ```cpp
 void MAVLinkProtocol::receiveBytes(LinkInterface* link, QByteArray b)
     for (int position = 0; position < b.size(); position++) {
         unsigned int decodeState = mavlink_parse_char(mavlinkChannel, (uint8_t)(b[position]), &message, &status);
 ```
 
-2. ÕÒµ½ÄÇ¸öÎ»ÖÃµ÷ÓÃÁË½ÓÊÕ×Ö½ÚµÄ·½·¨
-ÏÂÃæ¾ÍÊÇµ÷ÓÃÁËreceiveBytesµÄµØ·½£¬Õâ¸öÊÇqtÖĞ1¸ö×îºÃµÄÉè¼Æ¾ÍÊÇĞÅºÅ/²Ûº¯Êı
+2. æ‰¾åˆ°é‚£ä¸ªä½ç½®è°ƒç”¨äº†æ¥æ”¶å­—èŠ‚çš„æ–¹æ³•
+ä¸‹é¢å°±æ˜¯è°ƒç”¨äº†receiveBytesçš„åœ°æ–¹ï¼Œè¿™ä¸ªæ˜¯qtä¸­1ä¸ªæœ€å¥½çš„è®¾è®¡å°±æ˜¯ä¿¡å·/æ§½å‡½æ•°
 ```cpp
 src/comm/LinkManager.cc:153:    connect(link, &LinkInterface::bytesReceived, mavlink, &MAVLinkProtocol::receiveBytes);
 ```
 
-3. ÕÒµ½²Ûº¯Êı´¥·¢µÄµØ·½
+3. æ‰¾åˆ°æ§½å‡½æ•°è§¦å‘çš„åœ°æ–¹
 ```cpp
 void SerialLink::readBytes()
         qint64 numBytes = _port->bytesAvailable();
@@ -77,7 +77,7 @@ void SerialLink::readBytes()
 }
 ``` 
 
-4. ÕÒµ½ÊÇÄÄÎ»µ÷ÓÃÁËSerialLink::readBytes()
+4. æ‰¾åˆ°æ˜¯å“ªä½è°ƒç”¨äº†SerialLink::readBytes()
 ```cpp
 QObject::connect(_port, &QIODevice::readyRead, this, &SerialLink::_readBytes);
 ```

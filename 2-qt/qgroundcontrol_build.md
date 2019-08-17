@@ -1,16 +1,16 @@
 qgroundcontrol3.2.0 
 
-# ¼ò½é
-qgroundcontrol3.2.0ÊÇpx4¿ª·¢µØÃæÕ¾, Ğ¡±àÏĞÀ´ÎŞÊÂ£¬×Ô¼º»ùÓÚÔ´Âë±àÒë1¸öqgroundµØÃæÕ¾¡£
+# ç®€ä»‹
+qgroundcontrol3.2.0æ˜¯px4å¼€å‘åœ°é¢ç«™, å°ç¼–é—²æ¥æ— äº‹ï¼Œè‡ªå·±åŸºäºæºç ç¼–è¯‘1ä¸ªqgroundåœ°é¢ç«™ã€‚
 
-# °²×°±àÒë
+# å®‰è£…ç¼–è¯‘
 
-## ±àÒë»·¾³
+## ç¼–è¯‘ç¯å¢ƒ
 ubuntu : 16.04
 qt: 5.9.0
 qgroundcontorl: 3.2.0
 
-## 1. qt°²×° 
+## 1. qtå®‰è£… 
 ```
 $ cd ~/
 $ wget http://download.qt.io/official_releases/qt/5.9/5.9.0/qt-opensource-linux-x64-5.9.0.run
@@ -18,30 +18,30 @@ $ sudo chmod +x qt-opensource-linux-x64-5.9.0.run
 $ ./qt-opensource-linux-x64-5.9.0.run
 ```
 
-×¢ÒâÑ¡Ôñ"Desktop_gcc_64-bit",·ñÔò»á³öÏÖÏÂÃæµÄÎÊÌâ
+æ³¨æ„é€‰æ‹©"Desktop_gcc_64-bit",å¦åˆ™ä¼šå‡ºç°ä¸‹é¢çš„é—®é¢˜
 
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qt_5.9.0_install.png" height="720" width="1280" > 
 </div>
 
 <div align="center">
-<p>  ³öÏÖÃ»ÓĞkitµÄ´íÎó </p> 
+<p>  å‡ºç°æ²¡æœ‰kitçš„é”™è¯¯ </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/no_qmake_Install.PNG" height="720" width="1280" > 
 </div>
 
-Ğ¶ÔØqt·½Ê½
+å¸è½½qtæ–¹å¼
 ```
 yangang@ubuntu:~/work/tools/qt5.9.0$ ls
 5.9             dist  Examples             Licenses         MaintenanceTool.dat  network.xml
 components.xml  Docs  InstallationLog.txt  MaintenanceTool  MaintenanceTool.ini  Tools
 yangang@ubuntu:~/work/tools/qt5.9.0$ ./MaintenanceTool
 ```
-<!-- ![Í¼Æ¬](./qgroundcontrol/qt_5.9.0_install.png)
-![Í¼Æ¬](./qgroundcontrol/no_qmake_Install.png) -->
+<!-- ![å›¾ç‰‡](./qgroundcontrol/qt_5.9.0_install.png)
+![å›¾ç‰‡](./qgroundcontrol/no_qmake_Install.png) -->
 
-## 2. ÏÂÔØqgroundcontrolÔ´Âë
-°æ±¾ÇĞ»»£¬×¢ÒâÒªÊÇÓÃgit submodules½øĞĞÍ¬²½×ÓÄ£¿é
+## 2. ä¸‹è½½qgroundcontrolæºç 
+ç‰ˆæœ¬åˆ‡æ¢ï¼Œæ³¨æ„è¦æ˜¯ç”¨git submodulesè¿›è¡ŒåŒæ­¥å­æ¨¡å—
 ```
 $ git clone https://github.com/mavlink/qgroundcontrol.git
 $ git checkout v3.2.0 
@@ -49,50 +49,50 @@ $ sudo git submodule  init
 $ sudo git submodule  update  
 ```
 
-## 3. ±àÒëqgroundcontrol»·¾³
+## 3. ç¼–è¯‘qgroundcontrolç¯å¢ƒ
 
-<!-- ![Í¼Æ¬](./qgroundcontrol/build.png) -->
+<!-- ![å›¾ç‰‡](./qgroundcontrol/build.png) -->
 
 <div align="center">
-<p>  ³öÏÖÃ»ÓĞkitµÄ´íÎó </p> 
+<p>  å‡ºç°æ²¡æœ‰kitçš„é”™è¯¯ </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/build.png" height="720" width="1280" > 
 </div>
 
-1. ´íÎó
+1. é”™è¯¯
    
 Project ERROR: sdl development package not found
 
-½â¾ö·½·¨
+è§£å†³æ–¹æ³•
 ```
 yangang@ubuntu:~/work/tools/game-tools$ sudo apt-cache search "libSDL2*"
 libsdl1.2-dev - Simple DirectMedia Layer development files
 ```
-2. ´íÎó2 
+2. é”™è¯¯2 
 error: gstreamer-video-1.0 development package not found
 
-½â¾ö·½·¨£º
+è§£å†³æ–¹æ³•ï¼š
 
-ÇĞ»»qgroundcontrolµ½3.2.0, ¾Í²»»á³öÏÖÁË
+åˆ‡æ¢qgroundcontrolåˆ°3.2.0, å°±ä¸ä¼šå‡ºç°äº†
 
-3. ±àÒëÍê³É
+3. ç¼–è¯‘å®Œæˆ
 
 <div align="center">
-<p>  ±àÒëÍê³É </p> 
+<p>  ç¼–è¯‘å®Œæˆ </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/build_end.png" height="720" width="1280" > 
 </div>
 
 
-4. ÌáĞÑ
+4. æé†’
    
-Èç¹û»¹³öÏÖÆäËûÎÊÌâ£¬¿ÉÒÔÍ¨¹ı https://github.com/mavlink/qgroundcontrol.gitµÄ
-issueÖĞÕÒµ½Ò»Ğ©½â¾ö·½·¨
+å¦‚æœè¿˜å‡ºç°å…¶ä»–é—®é¢˜ï¼Œå¯ä»¥é€šè¿‡ https://github.com/mavlink/qgroundcontrol.gitçš„
+issueä¸­æ‰¾åˆ°ä¸€äº›è§£å†³æ–¹æ³•
 
-## ÔËĞĞqgroundcontrol
+## è¿è¡Œqgroundcontrol
 
 <div align="center">
-<p>  ÔËĞĞ </p> 
+<p>  è¿è¡Œ </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/run.png" height="720" width="1280" > 
 </div>
 
-# ×Ü½á
-½ñÌìÒ»Ö±ÔÚµ÷ÊÔqt°æ±¾ºÍqgroundcontrol°æ±¾¶ÔÓ¦µÄÎÊÌâ£¬ÖÕÓÚÕÒµ½ÁËÒÔÉÏ2¸ö°æ±¾ÊÇÆ¥ÅäµÄ¡£
+# æ€»ç»“
+ä»Šå¤©ä¸€ç›´åœ¨è°ƒè¯•qtç‰ˆæœ¬å’Œqgroundcontrolç‰ˆæœ¬å¯¹åº”çš„é—®é¢˜ï¼Œç»ˆäºæ‰¾åˆ°äº†ä»¥ä¸Š2ä¸ªç‰ˆæœ¬æ˜¯åŒ¹é…çš„ã€‚

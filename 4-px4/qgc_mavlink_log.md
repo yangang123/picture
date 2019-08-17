@@ -4,8 +4,8 @@
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qgc_downlog.png" height="720" width="1280" > 
 </div>
 
-## qml²¿·Ö
-ÕâÑùlogController¾ÍºÍLogDownloadController½øÐÐÁË°ó¶¨¡£
+## qmléƒ¨åˆ†
+è¿™æ ·logControllerå°±å’ŒLogDownloadControllerè¿›è¡Œäº†ç»‘å®šã€‚
 >AnalyzeView.qml
 ```javascript
 Rectangle {
@@ -26,7 +26,7 @@ Rectangle {
 }
 ```
 >LogDownloadPage.qml
-> ¶¨Òå4¸öbutton£¬reflash, download, erase, cancel
+> å®šä¹‰4ä¸ªbuttonï¼Œreflash, download, erase, cancel
 ```javascript
 Column {
     spacing:            _margin
@@ -50,9 +50,9 @@ Column {
             onClicked:  logController.cancel()
 ```
 
-##  cpp²¿·Ö
+##  cppéƒ¨åˆ†
 
-### logÏÂÔØµÄ¶ÔÏó´´½¨
+### logä¸‹è½½çš„å¯¹è±¡åˆ›å»º
 class LogDownloadController : public QObject
 {
 
@@ -61,7 +61,7 @@ class LogDownloadController : public QObject
     Q_INVOKABLE void eraseAll               ();
     Q_INVOKABLE void cancel                 ();
 
-### LogDownloadControllerÉùÃ÷
+### LogDownloadControllerå£°æ˜Ž
 ```cpp
     qmlRegisterType<LogDownloadController>          (kQGCControllers,                       1, 0, "LogDownloadController");
 
@@ -70,17 +70,17 @@ class LogDownloadController : public QObject
     qmlRegisterType<MavlinkConsoleController>       (kQGCControllers,                       1, 0, "MavlinkConsoleController");
 ```
 
-### ÏÂÔØlogµÄÊµÏÖ¹ý³Ì
-mavlink_msg_log_request_data_pack_chanÊÇmavlink°üµÄ½Ó¿ÚÁË
+### ä¸‹è½½logçš„å®žçŽ°è¿‡ç¨‹
+mavlink_msg_log_request_data_pack_chanæ˜¯mavlinkåŒ…çš„æŽ¥å£äº†
 ```cpp
 LogDownloadController::download(QString path)
-   downloadToDirectory(dir);//Ñ¡ÔñÎÄ¼þ
+   downloadToDirectory(dir);//é€‰æ‹©æ–‡ä»¶
     -> LogDownloadController::_setDownloading(bool active)
      -> emit downloadingLogsChanged();
      -> LogDownloadController::_receivedAllData()
        -> LogDownloadController::_prepareLogDownload()
        ->_downloadData = new LogDownloadData(entry);
-        -> _downloadData->file.open(QIODevice::WriteOnly) //´´½¨ÎÄ¼þ
+        -> _downloadData->file.open(QIODevice::WriteOnly) //åˆ›å»ºæ–‡ä»¶
          ->    _requestLogData(_downloadData->ID, 0, _downloadData->chunk_table.size()*MAVLINK_MSG_LOG_DATA_FIELD_DATA_LEN);
         _timer.start(kTimeOutMilliseconds);
           ->  mavlink_msg_log_request_data_pack_chan(
@@ -90,8 +90,8 @@ LogDownloadController::_setActiveVehicle(Vehicle* vehicle)
      connect(_uas, &UASInterface::logEntry, this, &LogDownloadController::_logEntry);
         connect(_uas, &UASInterface::logData,  this, &LogDownloadController::_logData);
 
-### ½ÓÊÕÊý¾ÝµÄ¹ý³Ì
-_logData¾ÍÊÇ´Ómavlink·¢ËÍ¹ý³Ì
+### æŽ¥æ”¶æ•°æ®çš„è¿‡ç¨‹
+_logDataå°±æ˜¯ä»Žmavlinkå‘é€è¿‡ç¨‹
 ```cpp
 LogDownloadController::_logData(UASInterface* uas,
     -> const QString status = QString("%1 (%2/s)").arg(QGCMapEngine::bigSizeToString(_downloadData->written),

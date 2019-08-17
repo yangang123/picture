@@ -1,22 +1,22 @@
 @[TOC]
 
-# ¼ò½é
-AndroidµÄ¹ÙÍø²é×ÊÁÏ¿´µ½Õâ¸öÀ¶ÑÀÁÄÌìÊÒµÄÀı×Ó, ¶ÔÓÚÏëÊ¹ÓÃbluetoothÍ¨ĞÅµÄandroid³ÌĞò¿ÉÒÔ¿´ÏÂÎÒµÄ½²½â,Ö÷Òª½²½âÀ¶ÑÀÊÇÈçºÎ·¢ËÍºÍ½ÓÊÕÊı¾İ
+# ç®€ä»‹
+Androidçš„å®˜ç½‘æŸ¥èµ„æ–™çœ‹åˆ°è¿™ä¸ªè“ç‰™èŠå¤©å®¤çš„ä¾‹å­, å¯¹äºæƒ³ä½¿ç”¨bluetoothé€šä¿¡çš„androidç¨‹åºå¯ä»¥çœ‹ä¸‹æˆ‘çš„è®²è§£,ä¸»è¦è®²è§£è“ç‰™æ˜¯å¦‚ä½•å‘é€å’Œæ¥æ”¶æ•°æ®
 
 <div align="center">
 <p>  </p> 
 <img src="https://github.com/yangang123/picture/raw/master/AndroidBluetooth/Android-BluetoothChat.jpg" height="720" width="1280" > 
 </div>
 
-# ½çÃæ²¼¾Ölayout 
-layout/activity_device_list.xml  : ÏÔÊ¾À¶ÑÀÉè±¸ÁĞ±í
-layout/activity_main.xml         : ½çÃæÖ÷Èë¿Ú
-layout/device_name.xml           : À¶ÑÀÉè±¸ÃûÁĞ±í
-layout/fragment_bluetooth_chat.xml : °üÀ¨·¢ËÍ°´Å¥, ÄÚÈİÊäÈë½Ó¿ÚµÄ½çÃæ
-layout/message.xml                : ÏûÏ¢¸ñÊ½
+# ç•Œé¢å¸ƒå±€layout 
+layout/activity_device_list.xml  : æ˜¾ç¤ºè“ç‰™è®¾å¤‡åˆ—è¡¨
+layout/activity_main.xml         : ç•Œé¢ä¸»å…¥å£
+layout/device_name.xml           : è“ç‰™è®¾å¤‡ååˆ—è¡¨
+layout/fragment_bluetooth_chat.xml : åŒ…æ‹¬å‘é€æŒ‰é’®, å†…å®¹è¾“å…¥æ¥å£çš„ç•Œé¢
+layout/message.xml                : æ¶ˆæ¯æ ¼å¼
  
-menu/main.xml                     : Ö÷½çÃæÖĞÓĞ"HIDE LOG/SHOW LOG"²Ëµ¥½çÃæ
-menu/blutooth_chat.xml            : À¶ÑÀÉ¨Ãè£¬À¶ÑÀÉè±¸Ñ¡Ôñ£¬·¢ËÍÀ¶ÑÀ²Ëµ¥½çÃæ
+menu/main.xml                     : ä¸»ç•Œé¢ä¸­æœ‰"HIDE LOG/SHOW LOG"èœå•ç•Œé¢
+menu/blutooth_chat.xml            : è“ç‰™æ‰«æï¼Œè“ç‰™è®¾å¤‡é€‰æ‹©ï¼Œå‘é€è“ç‰™èœå•ç•Œé¢
 
 # code 
 
@@ -26,11 +26,11 @@ menu/blutooth_chat.xml            : À¶ÑÀÉ¨Ãè£¬À¶ÑÀÉè±¸Ñ¡Ôñ£¬·¢ËÍÀ¶ÑÀ²Ëµ¥½çÃæ
 </div>
 
 ```java
-BluetoothChatFragment.java  À¶ÑÀÁÄÌìµÄÒ³Ãæ²ã
-BluetoothChatService.java   À¶ÑÀÁÄÌìÊÕ·¢Êı¾İ·şÎñ
+BluetoothChatFragment.java  è“ç‰™èŠå¤©çš„é¡µé¢å±‚
+BluetoothChatService.java   è“ç‰™èŠå¤©æ”¶å‘æ•°æ®æœåŠ¡
 Constants.java     
-DeviceListActivity.java     ÏÔÊ¾À¶ÑÀÉè±¸ÁĞ±íÒ³Ãæ²ã
-MainActivity.java           Ö÷½çÃæ
+DeviceListActivity.java     æ˜¾ç¤ºè“ç‰™è®¾å¤‡åˆ—è¡¨é¡µé¢å±‚
+MainActivity.java           ä¸»ç•Œé¢
 
 SampleActivityBase.java
 
@@ -41,12 +41,12 @@ LogView.java
 LogWrapper.java  
 MessageOnlyLogFilter.java
 ```
-## ½çÃæ½»»¥Âß¼­
+## ç•Œé¢äº¤äº’é€»è¾‘
 ```java
 public class MainActivity extends SampleActivityBase
   ->protected void onCreate(Bundle savedInstanceState)
     ->BluetoothChatFragment fragment = new BluetoothChatFragment();
-    -> transaction.replace(R.id.sample_content_fragment, fragment);                  //Æô¶¯À¶ÑÀÁÄÌì´°¿Ú 
+    -> transaction.replace(R.id.sample_content_fragment, fragment);                  //å¯åŠ¨è“ç‰™èŠå¤©çª—å£ 
        -> public void onCreate(Bundle savedInstanceState) 
           -> mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
           ->onCreateView() 
@@ -61,31 +61,31 @@ public class MainActivity extends SampleActivityBase
             -> mSendButton.setOnClickListener(new View.OnClickListener() {
                 ->  public void onClick(View v) {
                      ->    sendMessage(message);
-            -> mChatService = new BluetoothChatService(getActivity(), mHandler);     //´´½¨·şÎñ         
-            -> public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {   //´´½¨²Ëµ¥
+            -> mChatService = new BluetoothChatService(getActivity(), mHandler);     //åˆ›å»ºæœåŠ¡         
+            -> public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {   //åˆ›å»ºèœå•
         inflater.inflate(R.menu.bluetooth_chat, menu);
 
             -> public boolean onOptionsItemSelected(MenuItem item) {
                 case R.id.secure_connect_scan: {
-                    Intent serverIntent = new Intent(getActivity(), DeviceListActivity.class); //´´½¨1¸öÒâÍ¼
-                    startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);       //ÔÚÆô¶¯activityµÄ´«µİÇëÇó
+                    Intent serverIntent = new Intent(getActivity(), DeviceListActivity.class); //åˆ›å»º1ä¸ªæ„å›¾
+                    startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);       //åœ¨å¯åŠ¨activityçš„ä¼ é€’è¯·æ±‚
                 case R.id.insecure_connect_scan: {
                 case R.id.discoverable: {    
     }
 ```
 
-##  MainActivityµÄ²Ëµ¥Ñ¡Ôñ
+##  MainActivityçš„èœå•é€‰æ‹©
 ```java
-ÊµÏÖ1¸ö²Ëµ¥½Ó¿Ú£¬Ö¸¶¨²¼¾ÖÎÄ¼şÊÇmenuÎÄ¼ş¼ĞµÄmain.xml
+å®ç°1ä¸ªèœå•æ¥å£ï¼ŒæŒ‡å®šå¸ƒå±€æ–‡ä»¶æ˜¯menuæ–‡ä»¶å¤¹çš„main.xml
 public boolean onCreateOptionsMenu(Menu menu)
     getMenuInflater().inflate(R.menu.main, menu);
 
-ÊµÏÖ²Ëµ¥ÇĞ»»µÄÓÃ»§¹¦ÄÜ
+å®ç°èœå•åˆ‡æ¢çš„ç”¨æˆ·åŠŸèƒ½
 public boolean onOptionsItemSelected(MenuItem item)    
   switch(item.getItemId()) {
 
 
-## DeviceListActivity¹¦ÄÜËµÃ÷
+## DeviceListActivityåŠŸèƒ½è¯´æ˜
 ```java
 public class DeviceListActivity extends Activity
    -> protected void onCreate(Bundle savedInstanceState)
@@ -94,14 +94,14 @@ public class DeviceListActivity extends Activity
 
 private AdapterView.OnItemClickListener mDeviceClickListener
             = new AdapterView.OnItemClickListener() 
-      ->setResult(Activity.RESULT_OK, intent);  //ÉèÖÃactivityµÄ·µ»ØÖµ
-      ->finish();                               //ÍË³öµ±Ç°activity
+      ->setResult(Activity.RESULT_OK, intent);  //è®¾ç½®activityçš„è¿”å›å€¼
+      ->finish();                               //é€€å‡ºå½“å‰activity
 ```
 
 
-## À¶ÑÀ·¢ËÍÊı¾İ
+## è“ç‰™å‘é€æ•°æ®
 
-¶¨ÒåÊäÈëÊä³öÁ÷
+å®šä¹‰è¾“å…¥è¾“å‡ºæµ
 ```java
 private final InputStream mmInStream;
 private final OutputStream mmOutStream;
@@ -116,11 +116,11 @@ mSendButton.setOnClickListener(new View.OnClickListener() {
             -> mmOutStream.write(buffer);
 ```
 
-## À¶ÑÀ½ÓÊÕÊı¾İ
+## è“ç‰™æ¥æ”¶æ•°æ®
 
-ÏÔÊ¾½ÓÊÕµÄÊı¾İ
+æ˜¾ç¤ºæ¥æ”¶çš„æ•°æ®
 mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
-ÏÔÊ¾·¢ËÍµÄÊı¾İ
+æ˜¾ç¤ºå‘é€çš„æ•°æ®
 mConversationArrayAdapter.add("Me:  " + writeMessage);
 
 ```java

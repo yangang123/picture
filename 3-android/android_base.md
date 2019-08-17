@@ -1,15 +1,15 @@
 [TOC]
 
-# ´´½¨²¼¾ÖÎÄ¼ş
+# åˆ›å»ºå¸ƒå±€æ–‡ä»¶
 >File->XML
 
 <div align="center">
 <img src="https://github.com/yangang123/picture/raw/master/Android/xml_create.png" height="720" width="500" > 
 </div>
 
-# ²¼¾Ö»ù´¡ÖªÊ¶
+# å¸ƒå±€åŸºç¡€çŸ¥è¯†
 
-## Ìí¼Óbutton
+## æ·»åŠ button
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,33 +21,33 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="´ò¿ª"/>
+        android:text="æ‰“å¼€"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¹Ø±Õ"/>
+        android:text="å…³é—­"/>
 
 </LinearLayout>
 ```
 
-## buttonÊôĞÔĞŞ¸Ä
->android:id             : buttonµÄid
->android:layout_width   : buttonµÄ¿í¶È£¬¿ÉÒÔÊÇwrap_content£¬»òÕßmatch_parent
->android:layout_height  : buttonµÄ¿í¶È£¬¿ÉÒÔÊÇwrap_content£¬»òÕßmatch_parent
->android:text           : buttonµÄ×Ö·û
+## buttonå±æ€§ä¿®æ”¹
+>android:id             : buttonçš„id
+>android:layout_width   : buttonçš„å®½åº¦ï¼Œå¯ä»¥æ˜¯wrap_contentï¼Œæˆ–è€…match_parent
+>android:layout_height  : buttonçš„å®½åº¦ï¼Œå¯ä»¥æ˜¯wrap_contentï¼Œæˆ–è€…match_parent
+>android:text           : buttonçš„å­—ç¬¦
 ```xml
  <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="´ò¿ª"/>
+        android:text="æ‰“å¼€"/>
 ```
 
 
-## ÏßĞÔ²¼¾ÖÖĞÌí¼ÓË®Æ½ÊôĞÔ
->androidÖĞ×î³£ÓÃµÄ²¼¾Ö·½Ê½µÄÊÇLinearLayout, ¿ÉÒÔÉèÖÃandroid:orientationÊôĞÔÊÇhorizontal
+## çº¿æ€§å¸ƒå±€ä¸­æ·»åŠ æ°´å¹³å±æ€§
+>androidä¸­æœ€å¸¸ç”¨çš„å¸ƒå±€æ–¹å¼çš„æ˜¯LinearLayout, å¯ä»¥è®¾ç½®android:orientationå±æ€§æ˜¯horizontal
 ```xml
 <LinearLayout 
     android:orientation="horizontal"> 
@@ -57,8 +57,8 @@
 <img src="https://github.com/yangang123/picture/raw/master/Android/LinearLayout_horizontal.png" height="720" width="500" > 
 </div>
 
-## ÏßĞÔ²¼¾ÖÖĞÌí¼Ó´¹Ö±ÊôĞÔ
->androidÖĞ×î³£ÓÃµÄ²¼¾Ö·½Ê½µÄÊÇLinearLayout, ¿ÉÒÔÉèÖÃandroid:orientationÊôĞÔÊÇvertical
+## çº¿æ€§å¸ƒå±€ä¸­æ·»åŠ å‚ç›´å±æ€§
+>androidä¸­æœ€å¸¸ç”¨çš„å¸ƒå±€æ–¹å¼çš„æ˜¯LinearLayout, å¯ä»¥è®¾ç½®android:orientationå±æ€§æ˜¯vertical
 ```xml
 <LinearLayout 
     android:orientation="vertical"> 

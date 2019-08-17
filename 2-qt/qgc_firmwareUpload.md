@@ -1,11 +1,11 @@
 [TOC]
-# 1. px4Éè±¸¹Ì¼þÉý¼¶-¼ò½é²¿·Ö
-qgroundcontrolµØÃæÕ¾Éý¼¶px4Éè±¸ÊÇ´Óqmlµ½cpulsplusµ½´®¿ÚÐ­ÒéµÈ£¬1¸ö¸´ÔÓµÄÈí¼þ¼Ü¹¹¡£ÏÂÃæ·Ö2²¿·Ö½²½â£¬
-Ò»²¿·ÖÊÇqml²¿·Ö£¬ÁíÒ»²¿·ÖÊÇcppÊµÏÖ²¿·Ö.
+# 1. px4è®¾å¤‡å›ºä»¶å‡çº§-ç®€ä»‹éƒ¨åˆ†
+qgroundcontrolåœ°é¢ç«™å‡çº§px4è®¾å¤‡æ˜¯ä»Žqmlåˆ°cpulsplusåˆ°ä¸²å£åè®®ç­‰ï¼Œ1ä¸ªå¤æ‚çš„è½¯ä»¶æž¶æž„ã€‚ä¸‹é¢åˆ†2éƒ¨åˆ†è®²è§£ï¼Œ
+ä¸€éƒ¨åˆ†æ˜¯qmléƒ¨åˆ†ï¼Œå¦ä¸€éƒ¨åˆ†æ˜¯cppå®žçŽ°éƒ¨åˆ†.
 
-# 2. px4Éè±¸¹Ì¼þÉý¼¶-qml²¿·Ö
+# 2. px4è®¾å¤‡å›ºä»¶å‡çº§-qmléƒ¨åˆ†
 
-## 2.1 qmlµÄµ÷ÓÃ¹ØÏµ
+## 2.1 qmlçš„è°ƒç”¨å…³ç³»
 ```
 MainWindowHybrid.qml
  -> MainWindowInner.qml
@@ -85,13 +85,13 @@ Rectangle {
 
 
 
-##  2.2 ½«FirmwareUpgradeController×¢²áµ½qmlÖÐ  
+##  2.2 å°†FirmwareUpgradeControlleræ³¨å†Œåˆ°qmlä¸­  
 ```cpp 
 void QGCApplication::_initCommon(void)
  -> qmlRegisterType<FirmwareUpgradeController>      (kQGCControllers,                       1, 0, "FirmwareUpgradeController");
 ```
 
-## 2.3 ÉùÃ÷½Ó¿Ú¹©qmlµ÷ÓÃ
+## 2.3 å£°æ˜ŽæŽ¥å£ä¾›qmlè°ƒç”¨
 ```cpp
 Q_INVOKABLE void startBoardSearch(void);
     
@@ -109,30 +109,30 @@ Q_INVOKABLE void startBoardSearch(void);
     Q_INVOKABLE FirmwareVehicleType_t vehicleTypeFromVersionIndex(int index);
 ```
 
-## 2.4 js²¿·Ö
-FirmwareUpgradeControllerÊÇ1¸öÀàÃû×Ö,idÊÇcontroller¾Í¿ÉÒÔºÍ
+## 2.4 jséƒ¨åˆ†
+FirmwareUpgradeControlleræ˜¯1ä¸ªç±»åå­—,idæ˜¯controllerå°±å¯ä»¥å’Œ
 controller.startBoardSearch()
 controller.flash(stack, firmwareType, vehicleType)
 
 
-# 3. px4Éè±¸¹Ì¼þÉý¼¶-cpp²¿·Ö
-3¸ö¶ÔÏó£¬FirmwareUpgradeControllerÕâ¸ö×î¶¥²ã¿ØÖÆÉý¼¶µÄ£¬
-PX4FirmwareUpgradeThreadControllerÊÇ¿ØÖÆpx4Éý¼¶Ïß³ÌµÄ,
-PX4FirmwareUpgradeThreadWorkerÉý¼¶¹ý³ÌÊÇ1¸öÏß³ÌÖ´ÐÐµÄ
+# 3. px4è®¾å¤‡å›ºä»¶å‡çº§-cppéƒ¨åˆ†
+3ä¸ªå¯¹è±¡ï¼ŒFirmwareUpgradeControllerè¿™ä¸ªæœ€é¡¶å±‚æŽ§åˆ¶å‡çº§çš„ï¼Œ
+PX4FirmwareUpgradeThreadControlleræ˜¯æŽ§åˆ¶px4å‡çº§çº¿ç¨‹çš„,
+PX4FirmwareUpgradeThreadWorkerå‡çº§è¿‡ç¨‹æ˜¯1ä¸ªçº¿ç¨‹æ‰§è¡Œçš„
 
-## 3.1 ¶ÔÏóÖ®¼äµÄ¹ØÏµ
+## 3.1 å¯¹è±¡ä¹‹é—´çš„å…³ç³»
 ```cpp
 FirmwareUpgradeController::FirmwareUpgradeController(void)
 _threadController = new PX4FirmwareUpgradeThreadController(this);
 _worker = new PX4FirmwareUpgradeThreadWorker(this); 
 ```
 
-## 3.2 ·ÖÎöÉý¼¶flash
-PX4FirmwareUpgradeThreadWorker::_flashÊÇ1¸ö²Ûº¯Êý£¬²Ùº¯ÊýµÄÁ¬½ÓÔÚ
-ÏÂÃæ£¬_controller·¢³öµÄÐÅºÅÊÇ_flashOnThread£¬Í¨¹ýÕÒ´úÂëPX4FirmwareUpgradeThreadController::flash·¢³öµÄ_flashOnThreadÐÅºÅ
+## 3.2 åˆ†æžå‡çº§flash
+PX4FirmwareUpgradeThreadWorker::_flashæ˜¯1ä¸ªæ§½å‡½æ•°ï¼Œæ“å‡½æ•°çš„è¿žæŽ¥åœ¨
+ä¸‹é¢ï¼Œ_controllerå‘å‡ºçš„ä¿¡å·æ˜¯_flashOnThreadï¼Œé€šè¿‡æ‰¾ä»£ç PX4FirmwareUpgradeThreadController::flashå‘å‡ºçš„_flashOnThreadä¿¡å·
 
 
-## 3.3 ²éÑ¯°å×Ó
+## 3.3 æŸ¥è¯¢æ¿å­
 ```cpp
  controller.startBoardSearch() 
    -> FirmwareUpgradeController::startBoardSearch(void)
@@ -153,7 +153,7 @@ PX4FirmwareUpgradeThreadWorker::_flashÊÇ1¸ö²Ûº¯Êý£¬²Ùº¯ÊýµÄÁ¬½ÓÔÚ
                                       -> if (!_read(port, response, 2, responseTimeout)) {
                                            -> bytesRead = port->read((char*)&data[bytesAlreadyRead], maxSize);
 ```
-## 3.4 ½øÐÐflashÉÕÐ´¹Ì¼þ
+## 3.4 è¿›è¡Œflashçƒ§å†™å›ºä»¶
 ```cpp
 controller.flash(stack, firmwareType, vehicleType)
   -> _FirmwareUpgradeController::flash(AutoPilotStackType_t stackType,FirmwareType_t,FirmwareVehicleType_t)
@@ -172,18 +172,18 @@ controller.flash(stack, firmwareType, vehicleType)
                                  emit _reboot();
                                  emit flashComplete();
 ```
-## 3.5 ·ÖÎöbootloader¶ÔÏóµÄ_readº¯Êý
-Bootloader::_readÊÇ×îºËÐÄµÄ´úÂë
-- ´ò¿ª1¸ö¶¨Ê±Æ÷
+## 3.5 åˆ†æžbootloaderå¯¹è±¡çš„_readå‡½æ•°
+Bootloader::_readæ˜¯æœ€æ ¸å¿ƒçš„ä»£ç 
+- æ‰“å¼€1ä¸ªå®šæ—¶å™¨
     QTime timeout;
         timeout.start();
-- Ö±½ÓÅÐ¶ÏelaspedÊ±¼ä
+- ç›´æŽ¥åˆ¤æ–­elaspedæ—¶é—´
    if (timeout.elapsed() > readTimeout) {
 
-- µÈ´ýÊý¾Ý
+- ç­‰å¾…æ•°æ®
    port->waitForReadyRead(100);
 
-- Ö±½Ó¶ÁÊý¾Ý
+- ç›´æŽ¥è¯»æ•°æ®
    bytesRead = port->read((char*)&data[bytesAlreadyRead], maxSize);
 ```cpp
 
@@ -193,7 +193,7 @@ bool Bootloader::_read(QSerialPort* port, uint8_t* data, qint64 maxSize, int rea
     
     while (bytesAlreadyRead < maxSize) {
 
-        //1. ´ò¿ª1¸ö¶¨Ê±Æ÷
+        //1. æ‰“å¼€1ä¸ªå®šæ—¶å™¨
         QTime timeout;
         timeout.start();
 
@@ -204,10 +204,10 @@ bool Bootloader::_read(QSerialPort* port, uint8_t* data, qint64 maxSize, int rea
                 _errorString = tr("Timeout waiting for bytes to be available");
                 return false;
             }
-            //3. µÈ´ý100ms
+            //3. ç­‰å¾…100ms
             port->waitForReadyRead(100);
         }
-        // 4. Ö±½Ó¶ÁÊý¾Ý
+        // 4. ç›´æŽ¥è¯»æ•°æ®
         qint64 bytesRead;
         bytesRead = port->read((char*)&data[bytesAlreadyRead], maxSize);
         

@@ -1,13 +1,13 @@
 # svcall
-svcall��CPU���쳣��������Ҫ�������Ȩ�����Ӧ�ó������Ȩ�������ķ��ʡ���linux�о���Ӧ�ó���ͨ��svc�����ں˽ӿڣ����open(....), read(....), write(....)
+svcall是CPU的异常处理，主要负责非特权级别的应用程序对特权级别程序的访问。在linux中就是应用程序通过svc调用内核接口，如果open(....), read(....), write(....)
 
-## ucosii��svcall
-����uCOS����ϵͳ��ʵ�ֲ��ǵ��͵�Client/Serverģ�ͣ�û��ʹ��svcall�ж�
-����Ӧ�ó�����ȫ�����ƻ�OS�Ķ�ջ������ϵͳ����������Ӧ�ó���Ҳ�����໥�ƻ����ԵĶ�ջ��
+## ucosii中svcall
+所以uCOS操作系统的实现不是典型的Client/Server模型，没有使用svcall中断
+所以应用程序完全可以破坏OS的堆栈，导致系统崩溃，各个应用程序也可以相互破坏各自的堆栈。
 
 
-## linux�µ�svcall�ж�
-linux 1.0�ں����õ���ϵͳ��������
+## linux下的svcall中断
+linux 1.0内核中用到的系统调用入下
 ```
 static inline _syscall0(int,idle)
 static inline _syscall0(int,fork)

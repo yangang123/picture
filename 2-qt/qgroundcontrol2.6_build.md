@@ -1,7 +1,7 @@
 
-# ¼ò½é
+# ç®€ä»‹
 
-## »·¾³
+## çŽ¯å¢ƒ
 ```
 windows: win10
 ubuntu: 16.04
@@ -10,18 +10,18 @@ qt win: qt-opensource-windows-x86-msvc2013_64-5.4.0.exe
 qt ubuntu: qt-opensource-linux-x64-5.4.0.run
 ```
 
-# ±àÒë
+# ç¼–è¯‘
 
 ## window
 
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qgroundcontrol_windows.png" height="720" width="1536" > 
 </div>
 
 ##  linux 
 
 <div align="center">
-<p>  °²×° </p> 
+<p>  å®‰è£… </p> 
 <img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qgroundcontrol_ubuntu.png" height="720" width="1536" > 
 </div>

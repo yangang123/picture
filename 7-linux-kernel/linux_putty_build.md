@@ -1,37 +1,38 @@
-# Ò».Ô´´úÂëÏÂÔØºÍ±àÒë
+# ä¸€.æºä»£ç ä¸‹è½½å’Œç¼–è¯‘
 
-## 1. Ô´´úÂëÏÂÔØ
+## 1. æºä»£ç ä¸‹è½½
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-## 2. ±àÒë
+## 2. ç¼–è¯‘
 ```
 $ .configure
 $ make
 ```
 https://the.earth.li/~sgtatham/putty/0.71/htmldoc/
-# ¶ş. °²×°putty¿ÉÖ´ĞĞÎÄ¼ş
-Í¨¹ıÊä³öĞÅÏ¢£¬ÎÒÃÇ¿ÉÒÔÖªµÀ°²×°Èí¼şÖ÷Òª·ÖÎª2¸ö²¿·Ö:
-1. °²×°¿ÉÒÔÖ´ĞĞÎÄ¼şµ½/usr/local/bin
-2. °²×°ÎÄµµËµÃ÷µ½/usr/local/share/man/
+# äºŒ. å®‰è£…puttyå¯æ‰§è¡Œæ–‡ä»¶
+é€šè¿‡è¾“å‡ºä¿¡æ¯ï¼Œæˆ‘ä»¬å¯ä»¥çŸ¥é“å®‰è£…è½¯ä»¶ä¸»è¦åˆ†ä¸º2ä¸ªéƒ¨åˆ†:
+1. å®‰è£…å¯ä»¥æ‰§è¡Œæ–‡ä»¶åˆ°/usr/local/bin
+2. å®‰è£…æ–‡æ¡£è¯´æ˜åˆ°/usr/local/share/man/
 ```
 $ sudo make install
-[sudo] yangang µÄÃÜÂë£º 
+[sudo] yangang çš„å¯†ç ï¼š 
 make  install-am
-make[1]: ½øÈëÄ¿Â¼¡°/home/yangang/work/tools/putty-0.71¡±
-make[2]: ½øÈëÄ¿Â¼¡°/home/yangang/work/tools/putty-0.71¡±
+make[1]: è¿›å…¥ç›®å½•â€œ/home/yangang/work/tools/putty-0.71â€
+make[2]: è¿›å…¥ç›®å½•â€œ/home/yangang/work/tools/putty-0.71â€
  /bin/mkdir -p '/usr/local/bin'
   /usr/bin/install -c plink pscp psftp puttygen pageant pterm putty puttytel '/usr/local/bin'
  /bin/mkdir -p '/usr/local/share/man/man1'
  /usr/bin/install -c -m 644 doc/plink.1 doc/pscp.1 doc/psftp.1 doc/puttygen.1 doc/pageant.1 doc/pterm.1 doc/putty.1 doc/puttytel.1 '/usr/local/share/man/man1'
-make[2]: Àë¿ªÄ¿Â¼¡°/home/yangang/work/tools/putty-0.71¡±
-make[1]: Àë¿ªÄ¿Â¼¡°/home/yangang/work/tools/putty-0.71¡±
+make[2]: ç¦»å¼€ç›®å½•â€œ/home/yangang/work/tools/putty-0.71â€
+make[1]: ç¦»å¼€ç›®å½•â€œ/home/yangang/work/tools/putty-0.71â€
 ```
 
-# Èı. Ğ¶ÔØputty¿ÉÖ´ĞĞÎÄ¼ş
+# ä¸‰. å¸è½½puttyå¯æ‰§è¡Œæ–‡ä»¶
 ```
 yangang@yangang-ubuntu:~/work/tools/putty-0.71$ sudo make uninstall
  ( cd '/usr/local/bin' && rm -f plink pscp psftp puttygen pageant pterm putty puttytel )
  ( cd '/usr/local/share/man/man1' && rm -f plink.1 pscp.1 psftp.1 puttygen.1 pageant.1 pterm.1 putty.1 puttytel.1 )
 ```
+
 
 

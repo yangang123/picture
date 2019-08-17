@@ -1,5 +1,5 @@
-# Éú³Édebhelloworld-1.0_amd64.debµÄÈí¼ş°ü
-1. ´´½¨debhelloworldÎÄ¼ş
+# ç”Ÿæˆdebhelloworld-1.0_amd64.debçš„è½¯ä»¶åŒ…
+1. åˆ›å»ºdebhelloworldæ–‡ä»¶
 ```
 vi debhelloworld.c 
 #include <stdio.h>
@@ -10,7 +10,7 @@ int main(int argc, char *argv)
 }
 ```
 
-2. ±àÒëcÎÄ¼ş£¬Éú³É¿ÉÖ´ĞĞÎÄ¼ş 
+2. ç¼–è¯‘cæ–‡ä»¶ï¼Œç”Ÿæˆå¯æ‰§è¡Œæ–‡ä»¶ 
 ```
 gcc debhelloworld.c -o debhelloworld_bin 
 mkdir debhelloworld
@@ -19,12 +19,12 @@ mkdir -p usr/bin/
 cp ../debhelloworld_bin usr/bin/debhelloworld
 
 ```
-3. Ğ´1¸öcontrolÎÄ¼şµ½debianÏÂ
+3. å†™1ä¸ªcontrolæ–‡ä»¶åˆ°debianä¸‹
 ```   
 mkdir DEBIAN
 vi DEBIAN/control
 ```
-ÏÂÃæ×¢Òâ£¬PackageµÄÖµÒ»¶¨ÒªĞ´³É¿ÉÖ´ĞĞÎÄ¼şµÄÃüÁî
+ä¸‹é¢æ³¨æ„ï¼ŒPackageçš„å€¼ä¸€å®šè¦å†™æˆå¯æ‰§è¡Œæ–‡ä»¶çš„å‘½ä»¤
 ```
 Package: debhelloworld
 Version: 1.0
@@ -37,12 +37,12 @@ Maintainer: helloworld.org
 Description: Print helloworld.org on the screen
 ```
 
-4. Éú³Édebhelloworld-1.0_amd64.debÎÄ¼ş 
+4. ç”Ÿæˆdebhelloworld-1.0_amd64.debæ–‡ä»¶ 
 ```
 dpkg-deb --build debhelloworld
 mv debhelloworld.deb debhelloworld-1.0_amd64.deb
 ```
-5.  ÑéÖ¤debhelloworld-1.0_amd64.debÊÇ·ñ³É¹¦
+5.  éªŒè¯debhelloworld-1.0_amd64.debæ˜¯å¦æˆåŠŸ
 ```
 yangang@ubuntu:~/work/tools$ sudo dpkg -i debhelloworld-1.0_amd64.deb
 Selecting previously unselected package debhelloworld.
@@ -52,13 +52,13 @@ Unpacking debhelloworld (1.0) ...
 Setting up debhelloworld (1.0) ...
 ```
 
-6.   Ö´ĞĞ²âÊÔ
+6.   æ‰§è¡Œæµ‹è¯•
 ```
 yangang@ubuntu:~/work/tools$ debhelloworld
 hello world
 ```
 
-7.  Ğ¶ÔØdebhelloworld
+7.  å¸è½½debhelloworld
 ```
 yangang@ubuntu:~/work/tools$ sudo apt-get remove debhelloworld
 [sudo] password for yangang:

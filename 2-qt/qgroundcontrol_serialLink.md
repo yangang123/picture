@@ -1,24 +1,24 @@
 
-C++ÖĞstatic_castºÍdynamic_castÇ¿ÖÆÀàĞÍ×ª»»
+C++ä¸­static_castå’Œdynamic_castå¼ºåˆ¶ç±»å‹è½¬æ¢
 
-> ÔÚC++±ê×¼ÖĞ£¬Ìá¹©ÁË¹ØÓÚÀàĞÍ²ã´Î×ª»»ÖĞµÄÁ½¸ö¹Ø¼ü×Östatic_castºÍdynamic_cast¡£
+> åœ¨C++æ ‡å‡†ä¸­ï¼Œæä¾›äº†å…³äºç±»å‹å±‚æ¬¡è½¬æ¢ä¸­çš„ä¸¤ä¸ªå…³é”®å­—static_castå’Œdynamic_castã€‚
 
-# Ò». Ã÷È·static_castºÍstatic_castÇø±ğ
+# ä¸€. æ˜ç¡®static_castå’Œstatic_caståŒºåˆ«
 ```cpp
 ParentClass *obj = new ParentClass;
 Child *objChild1 = static_cast<ParentClass *>(obj);
 Child *objChild2 = dynamic_cast<ParentClass *>(obj);
 ```
 ## 1.1 static_cast
-static_cast×ª»»ÔÚ±àÒëÊ±²»»á±¨´í£¬µ«ÊÇÕâÑùÊÇ²»°²È«µÄ£¬ÔÚÔËĞĞÊ±¿ÉÄÜ»áÓĞÎÊÌâ£¬ÒòÎª×ÓÀàÖĞ°üº¬¸¸ÀàÖĞÃ»ÓĞµÄÊı¾İºÍº¯Êı³ÉÔ±£¬Èç¹û·ÃÎÊ×ÓÀàµÄ³ÉÔ±ºÍº¯Êı£¬¾Í»á³öÏÖ·ÃÎÊÔ½½çµÄ´íÎó£¬µ¼ÖÂ³ÌĞò±ÀÀ£¡£
+static_castè½¬æ¢åœ¨ç¼–è¯‘æ—¶ä¸ä¼šæŠ¥é”™ï¼Œä½†æ˜¯è¿™æ ·æ˜¯ä¸å®‰å…¨çš„ï¼Œåœ¨è¿è¡Œæ—¶å¯èƒ½ä¼šæœ‰é—®é¢˜ï¼Œå› ä¸ºå­ç±»ä¸­åŒ…å«çˆ¶ç±»ä¸­æ²¡æœ‰çš„æ•°æ®å’Œå‡½æ•°æˆå‘˜ï¼Œå¦‚æœè®¿é—®å­ç±»çš„æˆå‘˜å’Œå‡½æ•°ï¼Œå°±ä¼šå‡ºç°è®¿é—®è¶Šç•Œçš„é”™è¯¯ï¼Œå¯¼è‡´ç¨‹åºå´©æºƒã€‚
 
 ## 1.2 dynamic_cast
-dynamic_castÓÉÓÚ¾ßÓĞÔËĞĞÊ±ÀàĞÍ¼ì²é¹¦ÄÜ£¬ËüÄÜ¼ì²éobjµÄÀàĞÍ£¬ÓÉÓÚÉÏÊö×ª»»ÊÇ²»ºÏÀíµÄ£¬ËùÒÔËü·µ»ØNULL¡£
+dynamic_castç”±äºå…·æœ‰è¿è¡Œæ—¶ç±»å‹æ£€æŸ¥åŠŸèƒ½ï¼Œå®ƒèƒ½æ£€æŸ¥objçš„ç±»å‹ï¼Œç”±äºä¸Šè¿°è½¬æ¢æ˜¯ä¸åˆç†çš„ï¼Œæ‰€ä»¥å®ƒè¿”å›NULLã€‚
 
-# ¶ş. ÊµÀı
-´óÃû¶¦¶¦µÄpx4µÄqGroundControlÔÚserialLink.h ºÍserialLink.ccµÄÉè¼Æ
+# äºŒ. å®ä¾‹
+å¤§åé¼é¼çš„px4çš„qGroundControlåœ¨serialLink.h å’ŒserialLink.ccçš„è®¾è®¡
 
-## ÉùÃ÷
+## å£°æ˜
 ```cpp
 class SerialConfiguration : public LinkConfiguration
 {
@@ -35,11 +35,11 @@ private:
 }
 ```
 
-## ¶¨Òå
-> ÓÉÓÚSerialLinkÀàµÄ¹¹Ôìº¯ÊıĞèÒª´«µİSerialConfigurationÀàĞÍµÄ¶ÔÏó£¬È»¶øconfigµÄÀàĞÍÈ·Êµ
-> LinkConfigurationÊÇSerialConfigurationµÄÅÉÉúÀà£¬ËùÒÔĞèÒªdynamic_cast½øĞĞ¶¯Ì¬¼ì²éconfigµÄÖ¸¶¨
-> ¶ÔÏóÊÇSerialConfigurationµÄ×ÓÀà¶ÔÏó»¹ÊÇLinkConfigurationµÄ¸¸Àà¶ÔÏó£¬ÎÒÃÇÍ¨¹ı´úÂëÈ·¶¨
-> LinkConfigurationÔÚ´´½¨µÄÊ±ºòÃ¿´Î¿ÉÒÔÍ¨type½øĞĞÊµÀı»¯¶ÔÏó. Í¨¹ı·ÖÎö, qgroundcontrolµÄÉè¼Æ°²È«µÄ
+## å®šä¹‰
+> ç”±äºSerialLinkç±»çš„æ„é€ å‡½æ•°éœ€è¦ä¼ é€’SerialConfigurationç±»å‹çš„å¯¹è±¡ï¼Œç„¶è€Œconfigçš„ç±»å‹ç¡®å®
+> LinkConfigurationæ˜¯SerialConfigurationçš„æ´¾ç”Ÿç±»ï¼Œæ‰€ä»¥éœ€è¦dynamic_castè¿›è¡ŒåŠ¨æ€æ£€æŸ¥configçš„æŒ‡å®š
+> å¯¹è±¡æ˜¯SerialConfigurationçš„å­ç±»å¯¹è±¡è¿˜æ˜¯LinkConfigurationçš„çˆ¶ç±»å¯¹è±¡ï¼Œæˆ‘ä»¬é€šè¿‡ä»£ç ç¡®å®š
+> LinkConfigurationåœ¨åˆ›å»ºçš„æ—¶å€™æ¯æ¬¡å¯ä»¥é€štypeè¿›è¡Œå®ä¾‹åŒ–å¯¹è±¡. é€šè¿‡åˆ†æ, qgroundcontrolçš„è®¾è®¡å®‰å…¨çš„
 ```cpp
 
 on_typeCombo_currentIndexChanged
@@ -50,14 +50,14 @@ on_typeCombo_currentIndexChanged
  pLink = new SerialLink(dynamic_cast<SerialConfiguration*>(config));
 
 
-//combox¶àÑ¡¿òÄÚÈİ¸Ä±ä
+//comboxå¤šé€‰æ¡†å†…å®¹æ”¹å˜
 void QGCCommConfiguration::on_typeCombo_currentIndexChanged(int index)
 {
     int type = _ui->typeCombo->itemData(index).toInt();
     _changeLinkType(type);
 }
 
-//´´½¨1¸ölinkÅäÖÃÑ¡Ïî
+//åˆ›å»º1ä¸ªlinké…ç½®é€‰é¡¹
 void QGCCommConfiguration::_changeLinkType(int type)
 {
     // Create new config instance

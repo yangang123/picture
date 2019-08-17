@@ -1,10 +1,10 @@
-# ±àÒëpx4stm32f4discoveryµÄµ¥°å
+# ç¼–è¯‘px4stm32f4discoveryçš„å•æ¿
 ```
 $ make px4-stm32f4discovery_default
 ```
 
-# Í³¼Æ¾²Ì¬±äÁ¿µÄ´óĞ¡
-ÎÒÃÇÍ¨¹ıÍ³¼Æ¾²Ì¬±äÁ¿µÄ´óĞ¡·ÖÎö£¬¾²Ì¬ÄÚ´æµÄ·ÖÅäÊÇ¶àÉÙ
+# ç»Ÿè®¡é™æ€å˜é‡çš„å¤§å°
+æˆ‘ä»¬é€šè¿‡ç»Ÿè®¡é™æ€å˜é‡çš„å¤§å°åˆ†æï¼Œé™æ€å†…å­˜çš„åˆ†é…æ˜¯å¤šå°‘
 ```
 yangang@ubuntu:~/work/github_proj/Firmware$ arm-none-eabi-nm --size-sort --print-size --radix=dec ./build/nuttx_px4-stm32f4discovery_default/nuttx_px4-stm32f4discovery_default.elf |grep " [bBdD] "
 536880584 00000001 b autosave_disabled
@@ -126,9 +126,9 @@ yangang@ubuntu:~/work/github_proj/Firmware$ arm-none-eabi-nm --size-sort --print
 536877732 00001200 b g_wdpool
 ```
 
-# ·ÖÎö¶¯Ì¬ÄÚ´æ
+# åˆ†æåŠ¨æ€å†…å­˜
 
-Í¨¹ıfreeÃüÁî
+é€šè¿‡freeå‘½ä»¤
 ```
 $ free
 ```
