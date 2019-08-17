@@ -1,5 +1,8 @@
 @[TOC]
 
+# 资源
+> nuttx_ps_cmd.md 
+
 # nuttx的ps命令实现原理
 
 ## 在没有添加proc虚拟文件系统实现方式

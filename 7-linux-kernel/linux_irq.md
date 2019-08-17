@@ -1,6 +1,9 @@
 # 简介
 >讲解RTOS和linux内核对于临界区处理
 
+# 资源
+> linux_irq.md 
+
 # RTOS处理临界区
 >RTOS中,中断和线程的打断，需要做原子操作，那么就是普通的关闭中断处理，因为在RTOS中，我们经常和中断打交道。
 
@@ -27,4 +30,4 @@ static inline void __sleep_on(struct wait_queue **p, int state)
 	remove_wait_queue(p, &wait);
 	restore_flags(flags);
 }
-``` 
+```
