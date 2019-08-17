@@ -4,14 +4,14 @@
 
 # 1. linux重定向, 通道重定向符号，写入1个字符到hello.txt文件中
 标准输入，标准输出，标准错误，也算是编程基础了，我讲一讲这功能在nuttx的os实现过程
-```javascript
+```c
 $ echo "abc" > hello.txt 
 $ cat hello.txt
     abc
 ```
 
 # 2. nuttx os start如何启动内核线程的
-```javascript
+```c
  void os_start(void)
    创建空闲任务
    ->   g_pidhash[ PIDHASH(0)].tcb = &g_idletcb.cmn;
@@ -35,8 +35,8 @@ $ cat hello.txt
 
 
 # 3. task_creath介绍
-每个线程创建的时候，会自动的复制父进程的文件句柄，这种克隆方式是一种继承思想
-```javascript
+>每个线程创建的时候，会自动的复制父进程的文件句柄，这种克隆方式是一种继承思想
+```c
 static int thread_create(FAR const char *name, uint8_t ttype, int priority,
                          int stack_size, main_t entry, FAR char * const argv[])
 group_setuptaskfiles(FAR struct task_tcb_s *tcb)
@@ -48,7 +48,7 @@ group_setuptaskfiles(FAR struct task_tcb_s *tcb)
 ```
 
 # 4. rcS启动nshterm线程后，为什么控制台被重定向，线程需要stop，然后start才能看到调试信息
-```javascript
+```c
 rcS:
  nshterm /dev/ttyACM0 &  /dev/ttyACM0作为新的控制台
  thread1 start 
@@ -57,7 +57,7 @@ rcS:
 ```
 当我们控制其切换到其他控制台的时候，我们rcs中的线程都已经启动，所以需要我们先对线程stop, 后进行start, 任务创建的时候会自动继承nsh标准输入标注输出。
 
-# 提出一个标准输入和标准输出是阻塞式设计还是非阻塞？
+# 5. 提出一个标准输入和标准输出是阻塞式设计还是非阻塞？
 ```
 #define O_RDONLY    (1 << 0)       
 #define O_RDOK      O_RDONLY       

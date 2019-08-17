@@ -3,9 +3,9 @@
 >讲解linux的spi驱动架构, 包括用户空间和内核空间如何配合使用spi驱动。通过px4的DriverFramwork架构
 实现imu传感器驱动架构作为案例进行讲解.
 
-
-DriverFramework
-linux4.0
+# 资源
+> linux_spi.md
+> 标题: 闫刚 linux平台实现IMU的DriverFramework
 
 # 用户态
 
