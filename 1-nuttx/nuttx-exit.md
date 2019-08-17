@@ -1,13 +1,14 @@
-了解下px4的nuttx是exit是如何释放任务资源的
+@[TOC]
+# 资源
+> nuttx_exit.md
 
 # 平台
-
-os: nuttx
-hardware: pixhawk
+>了解下px4的nuttx是exit是如何释放任务资源的
+>os: nuttx
+>hardware: pixhawk
 
 # 死循环退出会自动执行exit，释放TCB资源
-
-```
+```c
 #ifdef CONFIG_NUTTX_KERNEL
   if ((tcb->cmn.flags & TCB_FLAG_TTYPE_MASK) != TCB_FLAG_TTYPE_KERNEL)
     {
@@ -27,8 +28,8 @@ hardware: pixhawk
 ```
 
 # 举例说明
-调用stop（）=> 对象的析构函数 =>对任务id置-1
-```
+>调用stop（）=> 对象的析构函数 =>对任务id置-1
+```c
 void stop() {
     //销毁对象
     delete dev;

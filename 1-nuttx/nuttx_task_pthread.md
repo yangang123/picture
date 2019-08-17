@@ -1,8 +1,13 @@
+@[TOC]
+# 资源
+> nuttx_task_pthread.md
+
 # 说明
-线程是如何创建，进程是如何创建的。
+>线程是如何创建，进程是如何创建的。
 
 # TCB基础知识
-TCB主要是任务管理和group管理的内容
+>TCB主要是任务管理和group管理的内容
+```c
 1. task_group_s
 task_group_s {
     1. 进程id
@@ -20,12 +25,13 @@ struct tcb_s
     2. wait信号量
     3. 信号部分
 }
-
+```
 3. 一共3种类型的TCB
+```c
 #  define TCB_FLAG_TTYPE_TASK      (0 << TCB_FLAG_TTYPE_SHIFT)  /* Normal user task */
 #  define TCB_FLAG_TTYPE_PTHREAD   (1 << TCB_FLAG_TTYPE_SHIFT)  /* User pthread */
 #  define TCB_FLAG_TTYPE_KERNEL    (2 << TCB_FLAG_TTYPE_SHIFT)  /* Kernel thread */
-
+```
 
 ```c 
 struct task_group_s
@@ -281,6 +287,7 @@ struct tcb_s
 # 进程创建
 
 ## 进程数据结构
+```c
 struct task_tcb_s
 {
   /* Common TCB fields **********************************************************/
@@ -298,17 +305,21 @@ struct task_tcb_s
 
   FAR char **argv;                       /* Name+start-up parameters            */
 };
+```
 
 ## 进程创建过程 
+```c
 static int thread_create(FAR const char *name, uint8_t ttype, int priority,
                          int stack_size, main_t entry,
                          FAR char * const argv[])
  tcb = (FAR struct task_tcb_s *)kmm_zalloc(sizeof(struct task_tcb_s));
     -> group_setuptaskfiles(tcb); // 处理子进程和父进程的资源问题,拷贝父进程的资源到子进程,标准输入，标准输出等
+```
 
 # 线程创建
 
 ## 线程数据结构
+```
 struct pthread_tcb_s
 {
   /* Common TCB fields **********************************************************/
@@ -343,11 +354,12 @@ struct pthread_tcb_s
   FAR void *pthread_data[CONFIG_NPTHREAD_KEYS];
 #endif
 };
-
+```
 ## 线程创建过程
  线程是通过1个指针共享父进程的资源，这个设计很不错
-
+```c
  分配内存空间
  ptcb = (FAR struct pthread_tcb_s *)kmm_zalloc(sizeof(struct pthread_tcb_s));
  ret = group_bind(ptcb);
    tcb->cmn.group = ptcb->group; //子线程的groug共享父进程的group
+```

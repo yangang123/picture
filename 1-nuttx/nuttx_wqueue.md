@@ -1,14 +1,22 @@
+@[TOC]
+# 资源
+> nuttx_wqueue.md
+
 # 工作队列实现
 优点：最短时间调度
 缺点：工作队列执行完后，需要重新创建.
 
+
 ## 添加工作对象
+```c
 static int work_qqueue(FAR struct usr_wqueue_s *wqueue,
                        FAR struct work_s *work, worker_t worker,
                        FAR void *arg, systime_t delay)
  -> dq_addlast((FAR dq_entry_t *)work, &wqueue->q);
+```
 
 ## 工作队列执行进程
+```c
 void work_process(FAR struct kwork_wqueue_s *wqueue, systime_t period, int wndx)
 {
 
@@ -51,4 +59,4 @@ void work_process(FAR struct kwork_wqueue_s *wqueue, systime_t period, int wndx)
       usleep(next * USEC_PER_TICK);
       wqueue->worker[wndx].busy = true;
      }
-   
+```
