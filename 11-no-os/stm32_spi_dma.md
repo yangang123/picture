@@ -4,8 +4,7 @@
 > 闫刚 stm32-spi-DMA使用注意
 
 # Stm32的spi的DMA过程
-<div align="center">
-<p>  安装 </p> 
+<div>
 <img src="https://github.com/yangang123/picture/raw/master/11-no-os/resource/stm32_spi_dma.png" height="720" width="1536" > 
 </div>
 
