@@ -60,3 +60,25 @@ void work_process(FAR struct kwork_wqueue_s *wqueue, systime_t period, int wndx)
       wqueue->worker[wndx].busy = true;
      }
 ```
+
+# 使用注意
+>注意队列中必须设计非阻塞的接口，不能调用poll类型的非阻塞接口
+work_queue中，注意打开句柄的时候，一定在callback中打开，
+因为在callback外打开文件句柄属于nsh，而不属于work_queue. 
+所以如果调用fd在callback外部打开
+会导致，收发数据不正常。 类如px4的hmc5883在work_queue中的measure奇怪的写法: 
+公告主题和发布数据在1个函数中实现，和mpu6000中的公告发布不一致的问题.
+```cpp
+if (_mag_topic != nullptr) {
+      /* publish it */
+      orb_publish(ORB_ID(sensor_mag), _mag_topic, &new_report);
+
+    } else {
+      _mag_topic = orb_advertise_multi(ORB_ID(sensor_mag), &new_report,
+               &_orb_class_instance, (sensor_is_onboard) ? ORB_PRIO_HIGH : ORB_PRIO_MAX);
+
+      if (_mag_topic == nullptr) {
+        DEVICE_DEBUG("ADVERT FAIL");
+      }
+    }
+```
