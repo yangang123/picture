@@ -1,0 +1,30 @@
+# nsh启动过程
+int nsh_main(int argc, char *argv[])  //应用程序入口
+  ->#if defined(CONFIG_HAVE_CXX) && defined(CONFIG_HAVE_CXXINITIALIZE)
+		up_cxxinitialize();
+	#endif
+	int builtin_initialize(void)
+	  ->   ret = register_binfmt(&g_builtin_binfmt);  // 注册bin文件系统
+
+	 
+	#ifdef CONFIG_NSH_CONSOLE
+	ret = nsh_consolemain(0, NULL);                   ////进入终端 -----------------------------
+	      ->(void)nsh_initscript(&pstate->cn_vtbl);
+	   	      -> ret = nsh_script(vtbl, "init", NSH_INITPATH);  //读出rcs脚本 "init.d/rcS"
+	   	                                                        // 如果执行exit，那么就会退出nsh解析，下面的nsh_session就不会执行
+	      -> int nsh_session(FAR struct console_stdio_s *pstate)
+  		     -> for (;;)                              //进入死循环	
+			        fputs(g_nshprompt, pstate->cn_outstream);   //打印提示信息 const char g_nshprompt[]         = "nsh> ";
+					ret = readline(pstate->cn_line, CONFIG_NSH_LINELEN,
+						INSTREAM(pstate), OUTSTREAM(pstate));  //记录输入的命令，直到遇到回车按键
+							->(void)nsh_parse(&pstate->cn_vtbl, pstate->cn_line); //解析命令
+	         			 
+									 #if defined(CONFIG_NSH_BUILTIN_APPS) && (!defined(
+									 CONFIG_NSH_FILE_APPS) ||    //定义CONFIG_NSH_FILE_APPS
+									 !defined(CONFIG_FS_BINFS))  //定义CONFIG_FS_BINFS
+									 ret = nsh_builtin(vtbl, argv[0], argv, redirfile, oflags);
+										-> ret = exec_builtin(cmd, (FAR char * const *)argv, redirfile, oflags);
+
+  
+
+
