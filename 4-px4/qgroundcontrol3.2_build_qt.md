@@ -6,39 +6,39 @@ linux下的 qtcreatro是qt的开发工具IDE
 ## qt5.7.1安装
 我们看出qt5.7.1默认安装了很多的插件
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.7.1_install.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.7.1_install.png" height="720" width="1280" > 
 </div>
 
 ## qt5.11.3 安装第一步选择路径
 1. 出现默认路径
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_install_1.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_install_1.png" height="720" width="1280" > 
 </div>
   
 2. 选择路径
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_install_2.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_install_2.png" height="720" width="1280" > 
 </div>
 
 ## qt5.11.3 安装选择模块
 1. qt5.11.3默认的安装基本没有模块，
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_install_modules.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_install_modules.png" height="720" width="1280" > 
 </div>
 
 2. qt5.11.3我们选择“Destop gcc 64-bit”和"Qt Charts"
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_install_modules_1.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_install_modules_1.png" height="720" width="1280" > 
 </div>
 
 ## 查看qtcreator的kit内容
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_kit.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_kit.png" height="720" width="1280" > 
 </div>
 
 ## 4-px4/resource编译完成
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt5.11.3_qgc_build_end.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qt5.11.3_qgc_build_end.png" height="720" width="1280" > 
 </div>
 
 # 查看Qt Chart模块安装状态

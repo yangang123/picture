@@ -14,14 +14,14 @@
 >编译整个make px4cannode-v1, 注意，px4cannode-v1这个单板的构建是通过ninja构建，一般的makefile可能编译不过
 
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_1.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_1.png" height="200" width="1280" > 
 </div>
 
 ## 1.2   分析一下UAVCAN下的CAMKE
 >$ vi ./libuavcan/CMakeLists.txt
 
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_2.png" height="300" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_2.png" height="300" width="1280" > 
 </div>
 
 - DSDLC_INPUTS = test/dsdl_test/root_ns_a" "test/dsdl_test/root_ns_b" "${CMAKE_CURRENT_SOURCE_DIR}/../dsdl/uavcan
@@ -29,25 +29,25 @@
 - 从这里，我们基本就可以知道，这个DSDL基本的工作就是把输入文件转换成头文件，我也知道了输入文件的路劲，保存到了${DSDLC_INPUTS} 这个环境变量中， 输出文件保存到了${DSDLC_OUTPUT }文件
   
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
 </div>
 
 - 如何解析这些文件，从下面图片，我基本可以知道python解析了${CMAKE_CURRENT_SOURCE_DIR}/dsdl_compiler/libuavcan_dsdlc 这个脚本文件
 
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
 </div>
 
 - 从上面我们了解到，工具是libuavcan_dsdlc， 输入文件是在dsdl下的所有.uavcan文件，输出文件是在include/dsdlc_generated下，我们下面查看这2个文件夹
 
 ### 1.3.1 查看dsdl下的文件
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
 </div>
 
 ### 1.3.2. 查看输出路径下的include/dsdlc_generated
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
 </div>
 
 # 2.我们添加自己的UAVCAN数据如何添加vitual_button文件夹
@@ -72,7 +72,7 @@ uint8 value  # range 0 to 255
 
 ## 2.4 查看输出文件
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/uavcan_3.png" height="200" width="1280" > 
 </div>
 
 # 3. 错误的文件的例子

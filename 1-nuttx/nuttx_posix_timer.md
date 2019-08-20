@@ -9,7 +9,7 @@
 >主要是创建定时器的资源， 静态分配资源到链表中。
 
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/1-nuttx/resource/nuttx_waitdog_datastruct.jpg" height="840" width="720" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/1-nuttx/resource/nuttx_waitdog_datastruct.jpg" height="840" width="720" > 
 </div>
 
 void weak_function timer_initialize(void)

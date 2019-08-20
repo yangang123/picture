@@ -9,25 +9,25 @@ $git checkout develop
 
 ## 图一 PX4的源码cmake架构
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/6-linux-app/resource/px4_cmake_1.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/6-linux-app/resource/px4_cmake_1.png" height="720" width="1280" > 
 </div>
 
 ## 图二 px4添加一个驱动模块的CMakeLists.txt文件
 
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/6-linux-app/resource/px4_cmake_2.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/6-linux-app/resource/px4_cmake_2.png" height="720" width="1280" > 
 </div>
 
 ## 图三 openSTM的源码架构
 
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/6-linux-app/resource/px4_cmake_3.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/6-linux-app/resource/px4_cmake_3.png" height="720" width="1280" > 
 </div>
 
 
 ## 图四 openSTM中添加子模块CMakeLists.txt文件
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/6-linux-app/resource/px4_cmake_4.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/6-linux-app/resource/px4_cmake_4.png" height="720" width="1280" > 
 </div>
 现在，在我们的软件工程中添加一个hello的模块，也是非常的方便
 
@@ -53,7 +53,7 @@ CMakeLists.txt  -> cmake/configs/openSTM-v1.cmake -> cmake/common/px4_base.cmake
 
 ## 图五  openSTM编译
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/6-linux-app/resource/px4_cmake_5.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/6-linux-app/resource/px4_cmake_5.png" height="720" width="1280" > 
 
 # Makefie基础
 

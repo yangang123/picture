@@ -3,7 +3,7 @@ qgroundcontrol开发者文档中说明了qgc中的各个链路流向在文档中
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qgc_0504_02.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/qgroundcontrol/qgc_0504_02.png" height="720" width="1280" > 
 </div>
 
 # qgroundcontrol通信

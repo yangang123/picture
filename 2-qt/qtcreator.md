@@ -7,7 +7,7 @@ qt支持的windows, linux， windows等很多版本
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/2-qt/resource/qt_version.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/2-qt/resource/qt_version.png" height="720" width="1280" > 
 </div>
 
 
@@ -32,7 +32,7 @@ qt支持的windows, linux， windows等很多版本
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/2-qt/resource/qt_version.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/2-qt/resource/qt_version.png" height="720" width="1280" > 
 </div>
 
 

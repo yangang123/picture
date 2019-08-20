@@ -7,7 +7,7 @@
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/1-nuttx/resource/device_tree.jpg" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/1-nuttx/resource/device_tree.jpg" height="720" width="1280" > 
 </div>
 
 # 节点数据类型

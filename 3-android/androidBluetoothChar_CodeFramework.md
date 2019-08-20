@@ -5,7 +5,7 @@ Android的官网查资料看到这个蓝牙聊天室的例子, 对于想使用bl
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/Android-BluetoothChat.jpg" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/Android-BluetoothChat.jpg" height="720" width="1280" > 
 </div>
 
 # 界面布局layout 
@@ -22,7 +22,7 @@ menu/blutooth_chat.xml            : 蓝牙扫描，蓝牙设备选择，发送�
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/Android-BluetoothChat-studio.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/Android-BluetoothChat-studio.png" height="720" width="1280" > 
 </div>
 
 ```java

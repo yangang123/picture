@@ -4,7 +4,7 @@
 >File->XML
 
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resourcexml_create.png" height="720" width="500" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resourcexml_create.png" height="720" width="500" > 
 </div>
 
 # 布局基础知识
@@ -54,7 +54,7 @@
 </LinearLayout>
 ```
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resourceLinearLayout_horizontal.png" height="720" width="500" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resourceLinearLayout_horizontal.png" height="720" width="500" > 
 </div>
 
 ## 线性布局中添加垂直属性
@@ -66,5 +66,5 @@
 ```
 
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resourceLinearLayout_vertical.png" height="720" width="500" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resourceLinearLayout_vertical.png" height="720" width="500" > 
 </div>

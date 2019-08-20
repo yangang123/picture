@@ -14,7 +14,7 @@
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/bluetooth_change_API_platform.jpg" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/bluetooth_change_API_platform.jpg" height="720" width="1536" > 
 </div>
 
 
@@ -23,19 +23,19 @@
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/bluetooth_instatll_build_tools.jpg" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/bluetooth_instatll_build_tools.jpg" height="720" width="1536" > 
 </div>
 
 ## 修改SDK最小版本
 > SDK最小版本为API28
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/bluetooth_change_min_SDK_version.jpg" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/bluetooth_change_min_SDK_version.jpg" height="720" width="1536" > 
 </div>
 
 ## 编译完成
 > 编译完成，绿色的运行按钮会常亮
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/3-android/resource/bluetooth_build_finish.jpg" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/3-android/resource/bluetooth_build_finish.jpg" height="720" width="1536" > 
 </div>

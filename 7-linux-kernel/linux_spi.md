@@ -13,7 +13,7 @@
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/7-linux-kernel/resource/SPI_user_space.PNG" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/7-linux-kernel/resource/SPI_user_space.PNG" height="720" width="1280" > 
 </div>
 
 ## 1. spidev的设备节点spidev0.3表示spi0的chip_select3
@@ -36,7 +36,7 @@ int do_test(unsigned int num_read_attempts)
 
 <div align="center">
 <p>  </p> 
-<img src="https://github.com/yangang123/picture/raw/master/7-linux-kernel/resource/SPI_kernel_space.PNG" height="720" width="1280" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/7-linux-kernel/resource/SPI_kernel_space.PNG" height="720" width="1280" > 
 </div>
 
 ## 设备树

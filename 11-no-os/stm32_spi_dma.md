@@ -5,7 +5,7 @@
 
 # Stm32的spi的DMA过程
 <div>
-<img src="https://github.com/yangang123/picture/raw/master/11-no-os/resource/stm32_spi_dma.png" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/11-no-os/resource/stm32_spi_dma.png" height="720" width="1536" > 
 </div>
 
 1. DMA先把数据发送到SPI1->DR, TXE位被清除
@@ -16,6 +16,6 @@
 # spi死机的原因
 出现spi死机的问题，我们需要打开DMA2时钟
 <div >
-<img src="https://github.com/yangang123/picture/raw/master/11-no-os/resource/spi_dma_init.png" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/11-no-os/resource/spi_dma_init.png" height="720" width="1536" > 
 </div>
 

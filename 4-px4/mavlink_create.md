@@ -6,11 +6,11 @@
 2. 仓库 https://github.com/mavlink/mavlink
 
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/python/mav1.PNG" height="720" width="500" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/python/mav1.PNG" height="720" width="500" > 
 </div>
 
 # 启动mavgenerate
 
 <div align="center">
-<img src="https://github.com/yangang123/picture/raw/master/python/mav2.PNG" height="720" width="1000" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/python/mav2.PNG" height="720" width="1000" > 
 </div>

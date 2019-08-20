@@ -16,12 +16,12 @@ qt ubuntu: qt-opensource-linux-x64-5.4.0.run
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qgroundcontrol_windows.png" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qgroundcontrol_windows.png" height="720" width="1536" > 
 </div>
 
 ##  linux 
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qgroundcontrol_ubuntu.png" height="720" width="1536" > 
+<img src="https://github.com/yangang123/yangang123.github.io/raw/master/4-px4/resource/qgroundcontrol_ubuntu.png" height="720" width="1536" > 
 </div>
