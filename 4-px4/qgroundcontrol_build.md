@@ -22,12 +22,12 @@ $ ./qt-opensource-linux-x64-5.9.0.run
 
 <div align="center">
 <p>  安装 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/qt_5.9.0_install.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/qt_5.9.0_install.png" height="720" width="1280" > 
 </div>
 
 <div align="center">
 <p>  出现没有kit的错误 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/no_qmake_Install.PNG" height="720" width="1280" > 
+<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/no_qmake_Install.PNG" height="720" width="1280" > 
 </div>
 
 卸载qt方式
@@ -37,8 +37,6 @@ yangang@ubuntu:~/work/tools/qt5.9.0$ ls
 components.xml  Docs  InstallationLog.txt  MaintenanceTool  MaintenanceTool.ini  Tools
 yangang@ubuntu:~/work/tools/qt5.9.0$ ./MaintenanceTool
 ```
-<!-- ![图片](./qgroundcontrol/qt_5.9.0_install.png)
-![图片](./qgroundcontrol/no_qmake_Install.png) -->
 
 ## 2. 下载qgroundcontrol源码
 版本切换，注意要是用git submodules进行同步子模块
@@ -51,11 +49,11 @@ $ sudo git submodule  update
 
 ## 3. 编译qgroundcontrol环境
 
-<!-- ![图片](./qgroundcontrol/build.png) -->
+<!-- ![图片](./4-px4/resource/build.png) -->
 
 <div align="center">
 <p>  出现没有kit的错误 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/build.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/build.png" height="720" width="1280" > 
 </div>
 
 1. 错误
@@ -78,7 +76,7 @@ error: gstreamer-video-1.0 development package not found
 
 <div align="center">
 <p>  编译完成 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/build_end.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/build_end.png" height="720" width="1280" > 
 </div>
 
 
@@ -91,7 +89,7 @@ issue中找到一些解决方法
 
 <div align="center">
 <p>  运行 </p> 
-<img src="https://github.com/yangang123/picture/raw/master/qgroundcontrol/run.png" height="720" width="1280" > 
+<img src="https://github.com/yangang123/picture/raw/master/4-px4/resource/run.png" height="720" width="1280" > 
 </div>
 
 # 总结
