@@ -1,5 +1,5 @@
 # WorkQueueManager线程
-当前线程，专门处理spi的请求，用来读取传感器数据
+在很早以前px4的传感器数据是通过hrt在定时器中断服务程序中阻塞方式通过spi接口读取数据，由于spi的单个transfer的时间大约在几us,这种方式，当前线程，专门处理spi的请求，用来读取传感器数据
 
 - spi dma
 - queue
@@ -111,7 +111,7 @@ static inline void spi_dmarxwakeup(FAR struct stm32_spidev_s *priv)
 ```
 
 ## queue
-> 单词出发
+> 单次触发hrt
 ```
 void
 MPU6000::start()

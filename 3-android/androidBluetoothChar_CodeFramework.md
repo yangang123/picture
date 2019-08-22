@@ -1,5 +1,9 @@
 @[TOC]
 
+# 资源
+> androidBluetoothChar_CodeFramework.md
+> 标题: 闫刚 androidBluetoothChar代码架构
+
 # 简介
 Android的官网查资料看到这个蓝牙聊天室的例子, 对于想使用bluetooth通信的android程序可以看下我的讲解,主要讲解蓝牙是如何发送和接收数据
 
