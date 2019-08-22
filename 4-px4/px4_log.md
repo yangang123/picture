@@ -4,7 +4,7 @@
 > 标题： 闫刚 px4_log.h讲解
 
 # err.h
-```
+```c
 #define err(eval, ...)		do { \
 		PX4_ERR(__VA_ARGS__); \
 		PX4_ERR("Task exited with errno=%i\n", errno); \
@@ -22,7 +22,7 @@
 
 # px4_log.h 
 px4_log.h定义了log定义
-```
+```c
 #if defined(__PX4_ROS)
 
 #elif defined(__PX4_QURT)
