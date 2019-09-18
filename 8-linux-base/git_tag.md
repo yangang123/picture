@@ -24,3 +24,11 @@
 >git submodule sync --recursive                                  
 git submodule update --init --recursive      
 
+7. 子模块submodule1内容被删除，回复内容的方式
+> 7.1和7.2是重要的方法
+7.1 rm submodule1 -rf
+> 删除文件夹
+7.2 git clone xxxx  submodule1
+> 手动克隆仓库
+7.3 git submodule update --init --recursive 
+> 以后就可以正常管理子模块

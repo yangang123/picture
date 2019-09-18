@@ -9,7 +9,7 @@
 
 ## spi dma
 
-```
+```c
 #ifdef CONFIG_STM32F7_SPI_DMA
 static void spi_exchange(FAR struct spi_dev_s *dev, FAR const void *txbuffer,
                          FAR void *rxbuffer, size_t nwords)
@@ -84,7 +84,7 @@ static void spi_exchange(FAR struct spi_dev_s *dev, FAR const void *txbuffer,
 等待信号量
 spi_dmarxwait(priv);
 spi_dmatxwait(priv);
-```
+```c
 //启动DMA，注册毁掉函数
 static void spi_dmarxstart(FAR struct stm32_spidev_s *priv)
 {
@@ -112,7 +112,7 @@ static inline void spi_dmarxwakeup(FAR struct stm32_spidev_s *priv)
 
 ## queue
 > 单次触发hrt
-```
+```c
 void
 MPU6000::start()
 	//定义周期
@@ -136,7 +136,7 @@ px4_add_library(px4_work_queue
 	WorkQueueManager.cpp
 )
 
-```
+```cpp
 int WorkQueueManagerStart()
 {
 	//创建任务
