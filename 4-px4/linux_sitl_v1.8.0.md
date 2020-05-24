@@ -13,7 +13,7 @@
 # 分析px4可执行文件中编译了那些模块
 通过px4的elf分析代码中有那些模块，同时知道了main的入口，readelf -s xxx表示读取可执行文件的代码段
 
-```
+```c
 yangang@yangang-ubuntu:~/work/px4_proj/Firmware/build/posix_sitl_test$ readelf -s px4 |grep -n "main.cpp"
 1465:    44: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS replay_main.cpp
 1474:    53: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS main.cpp
@@ -38,7 +38,7 @@ yangang@yangang-ubuntu:~/work/px4_proj/Firmware/build/posix_sitl_test$ readelf -
 
 # 启动px4，看到了需要我们制定启动脚
 >"startup_config"是需要指定的启动脚本文件
-```
+```shell
 yangang@yangang-ubuntu:~/work/px4_proj/Firmware/build/posix_sitl_test$ ./px4 
 ERROR [Unknown] Error expected 1 or 2 position arguments, got 0
 ./px4 [-d] [data_directory] startup_config [-h]
@@ -50,7 +50,7 @@ ERROR [Unknown] Error expected 1 or 2 position arguments, got 0
 Restoring terminal
 ```
 # 我们先用px4的shell/iris的脚本, 发现已经正常跑了起来
-```
+```shell
 yangang@yangang-ubuntu:~/work/px4_proj/Firmware/build/posix_sitl_test$ ./px4  ../../posix-configs/SITL/init/shell/iris
 commands file: ../../posix-configs/SITL/init/shell/iris
 58 WARNING: setRealtimeSched failed (not run as root?)
@@ -71,7 +71,7 @@ pxh>
 yangang@yangang-ubuntu:~/work/github_proj/fight$ ./QGroundControl.AppImage 
 ```
 # 在px4中启动mavlink,连接飞控, 发现飞机已经连接上了
-```
+```shell
 pxh> mavlink start -r 800000 -u 14556 -m config
 INFO  [mavlink] mode: Config, data rate: 800000 B/s on udp port 14556 remote port 14550
 pxh> mavlink boot_complete
@@ -79,7 +79,7 @@ INFO  [mavlink] MAVLink only on localhost (set param MAV_BROADCAST = 1 to enable
 pxh> INFO  [mavlink] partner IP: 127.0.0.1
 ```
 # 查看px4占用的线程有那些
-```
+```shell
 yangang@yangang-ubuntu:/proc$ ps -ef |grep "px4"
 yangang  30631 22252  0 18:32 pts/1    00:00:01 ./px4 ../../posix-configs/SITL/init/shell/iris
 yangang@yangang-ubuntu:/proc/30631$ ls
@@ -98,4 +98,6 @@ yangang@yangang-ubuntu:/proc/30631/task$ ps -T -p 30631
 30631 31298 pts/1    00:00:00 mavlink_rcv_if0
 ```
 # posix px4启动
+```shell
 mavlink start -r 800000 -u 14556 -m config
+```

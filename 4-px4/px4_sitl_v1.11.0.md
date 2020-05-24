@@ -9,9 +9,9 @@
 ```
 
 # 分析px4可执行文件中编译了那些模块
-通过px4的elf分析代码中有那些模块，同时知道了main的入口，readelf -s xxx表示读取可执行文件的代码段
+>通过px4的elf分析代码中有那些模块，同时知道了main的入口，readelf -s xxx表示读取可执行文件的代码段
 
-```
+```c
 yangang@ubuntu:~/work/Firmware$ readelf -s build/px4_sitl_default/bin/px4 | grep -n "main.cpp"
 1057:    11: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS main.cpp
 1076:    30: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS cdevtest_main.cpp
@@ -36,7 +36,7 @@ yangang@ubuntu:~/work/Firmware$ readelf -s build/px4_sitl_default/bin/px4 | grep
 ```
 
 ## 安装jmavsim的依赖
-```
+```shell
 sudo add-apt-repository ppa:openjdk-r/ppa 
 sudo apt-get update 
 sudo apt-get install openjdk-8-jdk
@@ -46,8 +46,8 @@ sudo apt-get install ant openjdk-8-jdk openjdk-8-jre
 git checkout v1.11.0-beta1
 ```
 ## jmavsim启动失败！！！！！！
-$ make px4_sitl jmavsim 
-```
+>$ make px4_sitl jmavsim 
+```java
 com.jogamp.opengl.GLException: X11GLXDrawableFactory - Could not initialize shared resources for X11GraphicsDevice[type .x11, connection :0, unitID 0, handle 0x0, owner false, ResourceToolkitLock[obj 0x117719aa, isOwner false, <451c54bf, 767aa9a5>[count 0, qsz 0, owner <NULL>]]]
 	at jogamp.opengl.x11.glx.X11GLXDrawableFactory$SharedResourceImplementation.createSharedResource(X11GLXDrawableFactory.java:326)
 	at jogamp.opengl.SharedResourceRunner.run(SharedResourceRunner.java:297)
@@ -69,8 +69,9 @@ com.jogamp.opengl.GLException: J3D-Renderer-1: createImpl ARB n/a but required, 
 	at javax.media.j3d.Canvas3D.createQueryContext(Canvas3D.java:3606)
 	at javax.media.j3d.Renderer.doWork(Renderer.java:461)
 ```
+
 修改方法:
-在.bashrc中添加以下内容
+>在.bashrc中添加以下内容
 ```
 export SVGA_VGPU10=0
 ```
@@ -79,7 +80,7 @@ export SVGA_VGPU10=0
 
 >$  ./Tools/sitl_run.sh /home/yangang/work/Firmware/build/px4_sitl_default/bin/px4  none  jmavsim  none  /home/yangang/work/Firmware /home/yangang/work/Firmware/build/px4_sitl_default
 
-```
+```shell
 /Tools/sitl_run.sh /home/yangang/work/Firmware/build/px4_sitl_default/bin/px4  none  jmavsim  none  /home/yangang/work/Firmware /home/yangang/work/Firmware/build/px4_sitl_default
 SITL ARGS
 sitl_bin: /home/yangang/work/Firmware/build/px4_sitl_default/bin/px4
